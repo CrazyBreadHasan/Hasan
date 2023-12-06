@@ -17,4 +17,4 @@ while status == 1:
         time.sleep(0.5)
         status = 0
 
-gpio.cleanup()
+GPIO.cleanup()
