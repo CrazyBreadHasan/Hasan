@@ -6,6 +6,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.IN)
 
+been_pressed = 0
 
 
 while True:
