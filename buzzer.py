@@ -12,4 +12,4 @@ for i in range(50):
     GPIO.output(4, GPIO.LOW)
     time.sleep(0.025)
 
-GPIO.cleanup
+GPIO.cleanup()
