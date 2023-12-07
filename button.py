@@ -13,7 +13,7 @@ for i in range(10):
         GPIO.output(4, GPIO.HIGH)
         time.sleep(0.5)
         GPIO.output(4, GPIO.LOW)
-    else:
+    elif GPIO.input(22) == False:
         GPIO.output(17, GPIO.HIGH)
         time.sleep(0.5)
         GPIO.output(17, GPIO.LOW)
