@@ -13,8 +13,8 @@ for i in range(10):
         GPIO.output(4, GPIO.HIGH)
         GPIO.output(17, GPIO.LOW)
     elif GPIO.input(27) == True:
-        GPIO.output(4, GPIO.LOW)
         GPIO.output(17, GPIO.HIGH)
+        GPIO.output(17, GPIO.LOW)
 
     time.sleep(0.5)
 
