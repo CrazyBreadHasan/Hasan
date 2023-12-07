@@ -8,13 +8,13 @@ GPIO.setup(17, GPIO.OUT)
 
 for i in range(10):
     GPIO.output(4, GPIO.HIGH)
-    time.sleep(0.5)
+
     GPIO.output(17, GPIO.LOW)
 
-
+    time.sleep(0.5)
 
     GPIO.output(17, GPIO.HIGH)
-    time.sleep(0.5)
+
     GPIO.output(4, GPIO.LOW)
 
 
