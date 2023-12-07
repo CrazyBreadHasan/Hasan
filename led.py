@@ -9,11 +9,11 @@ GPIO.setup(4, GPIO.OUT)
 for i in range(5):
     GPIO.output(4, GPIO.HIGH)
     print("Led is on!")
-    time.sleep(0.25)
+    time.sleep(0.025)
 
     GPIO.output(4, GPIO.LOW)
     print("Led if off")
-    time.sleep(0.25)
+    time.sleep(0.025)
 
 
 GPIO.cleanup()
