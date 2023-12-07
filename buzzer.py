@@ -5,15 +5,11 @@ import time
 GPIO.setmode(GPIO.BCM)
 #zet de pin als output
 GPIO.setup(4, GPIO.OUT)
-# loop through 5 times
-for i in range(5):
+# loop through 50 times
+for i in range(50):
     GPIO.output(4, GPIO.HIGH)
-    print("Led is on!")
-    time.sleep(0.25)
-
+    time.sleep(0.025)
     GPIO.output(4, GPIO.LOW)
-    print("Led if off")
-    time.sleep(0.25)
+    time.sleep(0.025)
 
-
-GPIO.cleanup()
+GPIO.cleanup
