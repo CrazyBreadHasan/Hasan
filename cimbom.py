@@ -22,6 +22,9 @@ try:
             GPIO.output(17, GPIO.HIGH)
             time.sleep(0.5)
             GPIO.output(17, GPIO.LOW)
+            GPIO.output(16, GPIO.HIGH)
+            time.sleep(0.5)
+            GPIO.output(16, GPIO.LOW)
         # elif GPIO.input(22) == True:
         #     GPIO.output(24, GPIO.HIGH)
         #     time.sleep(0.5)
