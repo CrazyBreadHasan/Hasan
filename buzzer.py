@@ -4,12 +4,14 @@ import time
 #gebruik BCM mode voor de pin nummering (conform breakout)
 GPIO.setmode(GPIO.BCM)
 #zet de pin als output
-GPIO.setup(4, GPIO.OUT)
-# loop through 50 times
-for i in range(50):
-    GPIO.output(4, GPIO.HIGH)
-    time.sleep(0.025)
-    GPIO.output(4, GPIO.LOW)
-    time.sleep(0.025)
+p = GPIO.PWM(4, 1000)
+
+def playTone(duration)
+    p.start(50)
+    time.sleep(duration)
+    p.stop()
+
+
+playTone(0.2)
 
 GPIO.cleanup()
