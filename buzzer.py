@@ -1,9 +1,8 @@
-#importeer GPIO en time package
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 import time
-#gebruik BCM mode voor de pin nummering (conform breakout)
+# Use BCM mode for the pin numbering (conform breakout)
 GPIO.setmode(GPIO.BCM)
-#zet de pin als output
+# Set the pin as output
 GPIO.setup(4, GPIO.OUT)
 p = GPIO.PWM(4, 1000)
 
@@ -12,7 +11,9 @@ def playTone(duration):
     time.sleep(duration)
     p.stop()
 
-
-playTone(0.2)
-
-GPIO.cleanup()
+try:
+    # Play a tone for half a second
+    playTone(0.5)
+finally:
+    # Clean up the GPIO pins
+    GPIO.cleanup()
