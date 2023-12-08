@@ -10,7 +10,7 @@ try:
     GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
     while True:
-        if GPIO.input(22) == True:
+        if GPIO.input(22) and GPIO.input(24) == True:
             GPIO.output(4, GPIO.HIGH)
             time.sleep(0.5)
             GPIO.output(4, GPIO.LOW)
@@ -19,10 +19,10 @@ try:
             GPIO.output(17, GPIO.HIGH)
             time.sleep(0.5)
             GPIO.output(17, GPIO.LOW)
-        elif GPIO.input(22) == True:
-            GPIO.output(24, GPIO.HIGH)
-            time.sleep(0.5)
-            GPIO.output(24, GPIO.LOW)
+        # elif GPIO.input(22) == True:
+        #     GPIO.output(24, GPIO.HIGH)
+        #     time.sleep(0.5)
+        #     GPIO.output(24, GPIO.LOW)
 
 except KeyboardInterrupt:
     print("Keyboard interrupt. Cleaning up GPIO.")
