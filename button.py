@@ -5,7 +5,8 @@ GPIO.setmode(GPIO.BCM)
 
 GPIO.setup(4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
-GPIO.setup(22, GPIO.IN)
+# GPIO.setup(22, GPIO.IN)
+GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 
 # for i in range(10):
