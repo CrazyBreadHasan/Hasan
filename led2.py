@@ -7,12 +7,13 @@ GPIO.setup(4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 GPIO.setup(16, GPIO.OUT)
 GPIO.setup(21, GPIO.OUT)
+GPIO.PWM(21, 2000)
 
 for i in range(10):
 
     GPIO.output(4, GPIO.HIGH)
     GPIO.output(21, GPIO.HIGH)
-    GPIO.PWM(21, 1000)
+    GPIO.PWM.start(21, 2000)
     time.sleep(0.25)
     GPIO.output(4, GPIO.LOW)
     GPIO.output(21, GPIO.LOW)
