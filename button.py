@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 GPIO.setup(22, GPIO.IN)
-GPIO.cleanup()
+
 
 # for i in range(10):
 while True:
