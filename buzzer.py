@@ -25,4 +25,4 @@ def sweep(start_freq, end_freq, duration):
  start_period = 1.0/start_freq
  end_period = 1.0/end_freq
  avg_period = (start_period + end_period) / 2
- freq_delta = (end_freq – start_freq)/avg_period
+ freq_delta = (end_freq - start_freq)/avg_period
