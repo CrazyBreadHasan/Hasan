@@ -6,7 +6,7 @@ GPIO.setmode(GPIO.BCM)
 #zet de pin als output
 p = GPIO.PWM(4, 1000)
 
-def playTone(duration)
+def playTone(duration):
     p.start(50)
     time.sleep(duration)
     p.stop()
