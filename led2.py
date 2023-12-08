@@ -12,6 +12,7 @@ for i in range(10):
 
     GPIO.output(4, GPIO.HIGH)
     GPIO.output(21, GPIO.HIGH)
+    GPIO.PWM(21, 1000)
     time.sleep(0.25)
     GPIO.output(4, GPIO.LOW)
     GPIO.output(21, GPIO.LOW)
