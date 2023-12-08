@@ -1,10 +1,10 @@
-#import RPi.GPIO as GPIO
+import RPi.GPIO as GPIO
 import time
 # Use BCM mode for the pin numbering (conform breakout)
 GPIO.setmode(GPIO.BCM)
 # Set the pin as output
 GPIO.setup(4, GPIO.OUT)
-p = GPIO.PWM(4, 1000)
+p= GPIO.PWM(4, 1000)
 
 def playTone(duration):
     p.start(50)
