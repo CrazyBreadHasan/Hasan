@@ -27,11 +27,11 @@ def led_aan_rood():
         time.sleep(0.25)
 def led_aan_groen():
     for i in range(5):
-        GPIO.output(7, GPIO.HIGH)
+        GPIO.output(17, GPIO.HIGH)
 
         time.sleep(0.25)
 
-        GPIO.output(7, GPIO.LOW)
+        GPIO.output(17, GPIO.LOW)
 
         time.sleep(0.25)
 
