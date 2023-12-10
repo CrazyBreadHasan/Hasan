@@ -75,8 +75,8 @@ def speel_spel(amount: int, catogory: int) -> None:
         else:
             print("incorrect")
             led_aan_rood()
-            punten =-1
-        elif punten == 0:
+            punten -1
+        if punten == 0:
             speel_spel(3, 18)
 
 
