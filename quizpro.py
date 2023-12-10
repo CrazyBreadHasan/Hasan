@@ -4,6 +4,7 @@ import random
 import RPi.GPIO as GPIO
 import time
 
+punten = 1
 GPIO.setmode(GPIO.BCM)
 #zet de pin als output
 GPIO.setup(4, GPIO.OUT)
@@ -74,6 +75,10 @@ def speel_spel(amount: int, catogory: int) -> None:
         else:
             print("incorrect")
             led_aan_rood()
+            punten =-1
+        elif punten == 0:
+            speel_spel(3, 18)
+
 
 if __name__ == '__main__':
     amount = 3
