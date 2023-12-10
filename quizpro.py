@@ -1,6 +1,12 @@
 import requests
 import html
 import random
+import RPi.GPIO as GPIO
+import time
+
+GPIO.setmode(GPIO.BCM)
+#zet de pin als output
+GPIO.setup(4, GPIO.OUT)
 
 # vragen ophalen
 def vragen_ophalen(amount: int, category: int) -> list:
@@ -8,6 +14,16 @@ def vragen_ophalen(amount: int, category: int) -> list:
     response = requests.get(url)
     response_json = response.json()
     return response_json["results"]
+
+def led_aan():
+    for i in range(5):
+        GPIO.output(4, GPIO.HIGH)
+
+        time.sleep(0.25)
+
+        GPIO.output(4, GPIO.LOW)
+
+        time.sleep(0.25)
 
 # vragen mixen
 def vragen_mixen(keuze: list) ->list:
@@ -44,6 +60,7 @@ def speel_spel(amount: int, catogory: int) -> None:
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
         if geb_keuze_index == juiste_antwoord_tekst:
             print("Juist!!!. ")
+            led_aan()
         else:
             print("incorrect")
 
