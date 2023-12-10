@@ -19,6 +19,9 @@ for i in range(10):
     time.sleep(0.25)
     GPIO.output(17, GPIO.LOW)
 
+
+
+
     GPIO.output(16, GPIO.HIGH)
     time.sleep(0.25)
     GPIO.output(16, GPIO.LOW)
