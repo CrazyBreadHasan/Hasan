@@ -72,6 +72,7 @@ def speel_spel(amount: int, catogory: int) -> None:
         if geb_keuze_tekst == juiste_antwoord_tekst:
             print("Juist!!!. ")
             led_aan_groen()
+            punten + 1
 
 
         elif geb_keuze_tekst != juiste_antwoord_tekst:
