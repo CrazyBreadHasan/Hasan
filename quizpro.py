@@ -7,6 +7,7 @@ import time
 GPIO.setmode(GPIO.BCM)
 #zet de pin als output
 GPIO.setup(4, GPIO.OUT)
+GPIO.setup(17, GPIO.OUT)
 
 # vragen ophalen
 def vragen_ophalen(amount: int, category: int) -> list:
@@ -15,13 +16,22 @@ def vragen_ophalen(amount: int, category: int) -> list:
     response_json = response.json()
     return response_json["results"]
 
-def led_aan():
+def led_aan_rood():
     for i in range(5):
         GPIO.output(4, GPIO.HIGH)
 
         time.sleep(0.25)
 
         GPIO.output(4, GPIO.LOW)
+
+        time.sleep(0.25)
+def led_aan_groen():
+    for i in range(5):
+        GPIO.output(7, GPIO.HIGH)
+
+        time.sleep(0.25)
+
+        GPIO.output(7, GPIO.LOW)
 
         time.sleep(0.25)
 
@@ -60,9 +70,10 @@ def speel_spel(amount: int, catogory: int) -> None:
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
         if geb_keuze_tekst == juiste_antwoord_tekst:
             print("Juist!!!. ")
-            led_aan()
+            led_aan_groen()
         else:
             print("incorrect")
+            led_aan_rood()
 
 if __name__ == '__main__':
     amount = 3
