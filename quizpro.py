@@ -74,11 +74,11 @@ def speel_spel(amount: int, catogory: int) -> None:
             led_aan_groen()
 
 
-        else:
+        elif geb_keuze_tekst != juiste_antwoord_tekst:
             print("incorrect")
             led_aan_rood()
             punten - 1
-        ##        if punten == -3:print("Punten")speel_spel(3, 18)
+
         print(punten)
 
 
