@@ -58,7 +58,7 @@ def speel_spel(amount: int, catogory: int) -> None:
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
-        if geb_keuze_index == juiste_antwoord_tekst:
+        if geb_keuze_tekst == juiste_antwoord_tekst:
             print("Juist!!!. ")
             led_aan()
         else:
