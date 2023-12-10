@@ -4,6 +4,7 @@ import random
 import RPi.GPIO as GPIO
 import time
 
+global punten
 punten = 0
 GPIO.setmode(GPIO.BCM)
 #zet de pin als output
