@@ -89,6 +89,7 @@ def speel_spel(amount: int, catogory: int) -> None:
             punten -= 1 # decrement points by one if the answer is wrong and the user did not get the points
         totaal += 1 # increment total by one for each question
 
+print(totaal)
 
 
 if __name__ == '__main__':
