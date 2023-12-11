@@ -61,6 +61,7 @@ def pak_gebruiker_keuze() -> int:
 
 # spel spelen
 def speel_spel(amount: int, catogory: int) -> None:
+    global punten
     ophalen = vragen_ophalen(amount, catogory)
     for vraag in ophalen:
         vraag_text = html.unescape(vraag["question"])
@@ -92,3 +93,4 @@ if __name__ == '__main__':
     amount = 3
     category = 18
     speel_spel(amount, category)
+    print(punten)
