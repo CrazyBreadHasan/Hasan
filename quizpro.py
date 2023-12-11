@@ -31,6 +31,14 @@ def led_aan_rood():
         time.sleep(0.25)
 def led_aan_rood1():
     GPIO.output(4, GPIO.HIGH)
+
+def punten_led():
+    global punten
+
+    if punten == 1:
+        GPIO.output(4, GPIO.HIGH)
+    elif punten == 2:
+        GPIO.output(17, GPIO.HIGH)
 def led_aan_groen():
     for i in range(5):
         GPIO.output(17, GPIO.HIGH)
@@ -84,8 +92,11 @@ def speel_spel(amount: int, catogory: int) -> None:
 
         elif geb_keuze_tekst != juiste_antwoord_tekst:
             print("incorrect")
-            led_aan_rood1()
+            led_aan_rood()
             punten -= 1
+
+        punten_led()
+
 
 
 
