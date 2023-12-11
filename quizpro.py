@@ -38,7 +38,7 @@ def punten_led():
     if punten == -1:
         GPIO.output(4, GPIO.HIGH)
     elif punten == -2:
-        GPIO.output(17, GPIO.HIGH)
+        GPIO.output(4 and 17, GPIO.HIGH)
 def led_aan_groen():
     for i in range(5):
         GPIO.output(17, GPIO.HIGH)
