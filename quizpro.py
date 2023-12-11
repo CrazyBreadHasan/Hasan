@@ -86,5 +86,5 @@ def speel_spel(amount: int, catogory: int) -> None:
 
 if __name__ == '__main__':
     amount = 3
-    catogoty = 18
-    speel_spel(amount, catogoty)
+    category = 18
+    speel_spel(amount, category)
