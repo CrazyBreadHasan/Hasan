@@ -93,7 +93,7 @@ def speel_spel(amount: int, catogory: int) -> None:
 
         elif geb_keuze_tekst != juiste_antwoord_tekst:
             print("incorrect")
-            # led_aan_rood()
+            led_aan_rood()
             punten -= 1
 
         punten_led()
