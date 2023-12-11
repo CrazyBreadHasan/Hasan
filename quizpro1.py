@@ -89,10 +89,11 @@ def speel_spel(amount: int, catogory: int) -> None:
             punten -= 1 # decrement points by one if the answer is wrong and the user did not get the points
         totaal += 1 # increment total by one for each question
 
-print(punten)
+
 
 
 if __name__ == '__main__':
     amount = 3
     category = 18
     speel_spel(amount, category)
+    print(totaal)
