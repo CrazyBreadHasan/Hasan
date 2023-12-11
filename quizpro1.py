@@ -88,9 +88,7 @@ def speel_spel(amount: int, catogory: int) -> None:
             led_aan_rood()
             punten -= 1 # decrement points by one if the answer is wrong and the user did not get the points
         totaal += 1 # increment total by one for each question
-        print(f"Je hebt {punten} punten van de {totaal} vragen.") # print the current score and total questions
-    percentage = round((punten / totaal) * 100, 2) # calculate the percentage of correct answers
-    print(f"Je hebt het spel afgemaakt en je hebt {punten} punten van de {totaal} vragen. Dat is {percentage}% goed.") # print the final score and percentage
+
 
 
 if __name__ == '__main__':
