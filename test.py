@@ -11,4 +11,4 @@ GPIO.output(17, GPIO.HIGH)
 # Add a delay or other code here if needed
 
 # Cleanup GPIO settings when done
-GPIO.cleanup())
+GPIO.cleanup()
