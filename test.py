@@ -12,5 +12,7 @@ for i in range(5):
     time.sleep(150)
     # GPIO.output(4, GPIO.LOW)
     # time.sleep(0.25)
+    GPIO.output(17, GPIO.HIGH)
+    time.sleep(150)
 
 GPIO.cleanup()
