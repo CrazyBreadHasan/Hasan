@@ -9,11 +9,10 @@ GPIO.setup(17, GPIO.OUT)
 # Turn on the light
 
 for i in range(5):
-    GPIO.output(4, GPIO.HIGH)
+    GPIO.output([4, 17], [GPIO.HIGH, GPIO.HIGH])
     time.sleep(150)
     # GPIO.output(4, GPIO.LOW)
     # time.sleep(0.25)
-    GPIO.output(17, GPIO.HIGH)
-    time.sleep(150)
+
 
 GPIO.cleanup()
