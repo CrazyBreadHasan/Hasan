@@ -6,8 +6,9 @@ GPIO.setup(4, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 
 GPIO.output(4, GPIO.HIGH)
-time.sleep(2)
+
 GPIO.output(17, GPIO.HIGH)
+time.sleep()
 
 # Add a delay or other code here if needed
 
