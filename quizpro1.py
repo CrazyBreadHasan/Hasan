@@ -104,7 +104,14 @@ def speel_spel(amount: int, catogory: int) -> None:
 
 
 if __name__ == '__main__':
-    amount = 3
-    category = 18
-    speel_spel(amount, category)
-    print(punten)
+
+    try:
+        amount = 3
+        category = 18
+        speel_spel(amount, category)
+        print(punten)
+    except KeyboardInterrupt:
+        print("Keyboard interrupt. Cleaning up GPIO.")
+        GPIO.cleanup()
+    finally:
+        GPIO.cleanup()
