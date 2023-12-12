@@ -4,10 +4,10 @@ import random
 import RPi.GPIO as GPIO
 import time
 
-global punten # global variable for points
-global totaal # global variable for total questions
-punten = 0 # initialize points to zero
-totaal = 0 # initialize total to zero
+global punten
+punten = 0
+goed = 0
+fout = 0
 GPIO.setmode(GPIO.BCM)
 #zet de pin als output
 GPIO.setup(4, GPIO.OUT)
@@ -29,6 +29,17 @@ def led_aan_rood():
         GPIO.output(4, GPIO.LOW)
 
         time.sleep(0.25)
+def led_aan_rood1():
+    GPIO.output(4, GPIO.HIGH)
+
+def punten_led():
+    global punten
+
+    if punten == -1:
+        GPIO.output(4, GPIO.HIGH)
+    elif punten == -2:
+        GPIO.output(4, GPIO.HIGH)
+        GPIO.output(17, GPIO.HIGH)
 def led_aan_groen():
     for i in range(5):
         GPIO.output(17, GPIO.HIGH)
@@ -61,8 +72,7 @@ def pak_gebruiker_keuze() -> int:
 
 # spel spelen
 def speel_spel(amount: int, catogory: int) -> None:
-    global punten # use the global variable for points
-    global totaal # use the global variable for total questions
+    global punten
     ophalen = vragen_ophalen(amount, catogory)
     for vraag in ophalen:
         vraag_text = html.unescape(vraag["question"])
@@ -74,20 +84,21 @@ def speel_spel(amount: int, catogory: int) -> None:
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
-        correct = False # initialize a boolean variable to track the correctness of the answer
         if geb_keuze_tekst == juiste_antwoord_tekst:
             print("Juist!!!. ")
             led_aan_groen()
-            punten += 1 # increment points by one if the answer is correct
-            correct = True # set the variable to True if the answer is correct
+            punten +=1
 
 
 
-        elif geb_keuze_tekst != juiste_antwoord_tekst and not correct: # check if the answer is wrong and the user did not get the points
+        elif geb_keuze_tekst != juiste_antwoord_tekst:
             print("incorrect")
-            led_aan_rood()
-            punten -= 1 # decrement points by one if the answer is wrong and the user did not get the points
-        totaal += 1 # increment total by one for each question
+            led_aan_rood1()
+            punten -= 1
+
+            # punten_led()
+
+
 
 
 
@@ -96,4 +107,4 @@ if __name__ == '__main__':
     amount = 3
     category = 18
     speel_spel(amount, category)
-    print(totaal)
+    print(punten)
