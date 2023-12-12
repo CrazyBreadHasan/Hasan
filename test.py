@@ -6,9 +6,6 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(17, GPIO.OUT)
 
 # Turn on the light
-GPIO.output(17, GPIO.HIGH)
 
-# Add a delay or other code here if needed
-
-# Cleanup GPIO settings when done
-GPIO.cleanup()
+while True:
+    GPIO.output(17, GPIO.HIGH)
