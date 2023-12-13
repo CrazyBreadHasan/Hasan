@@ -105,7 +105,8 @@ def speel_spel(amount: int, catogory: int) -> None:
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
         if geb_keuze_tekst == juiste_antwoord_tekst:
             long_string(display, "Juist", 2)
-            sleep(0.2)
+            display.lcd_clear()
+
             led_aan_groen()
             punten +=1
 
@@ -113,7 +114,7 @@ def speel_spel(amount: int, catogory: int) -> None:
 
         elif geb_keuze_tekst != juiste_antwoord_tekst:
             long_string(display, "Incorrect", 2)
-            sleep(0.2)
+            display.lcd_clear()
             led_aan_rood()
             punten -= 1
 
