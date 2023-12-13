@@ -25,3 +25,4 @@ except KeyboardInterrupt:
     # If there is a KeyboardInterrupt (when you press ctrl+c), exit the program and cleanup
     print("Cleaning up!")
     display.lcd_clear()
+
