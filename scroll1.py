@@ -34,13 +34,13 @@ try:
 
     # Example of short string
     # Set the backlight color to blue
-    display.set_backlight(display.BLUE)
+    display.lcd_backlight(display.BLUE)
     long_string(display, "Hello World!", 1)
     sleep(1)
 
     # Example of long string
     # Set the backlight color to red
-    display.set_backlight(display.RED)
+    display.lcd_backlight(display.RED)
     long_string(display, "Hello again. This is a long text.", 2)
     display.lcd_clear()
     sleep(1)
@@ -48,7 +48,7 @@ try:
     while True:
         # An example of infinite scrolling text
         # Set the backlight color to green
-        display.set_backlight(display.GREEN)
+        display.lcd_backlight(display.GREEN)
         long_string(display, "Hello friend! This is a long text!", 1)
 except KeyboardInterrupt:
     # If there is a KeyboardInterrupt (when you press ctrl+c), exit the program and cleanup
