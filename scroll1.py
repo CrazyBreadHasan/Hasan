@@ -1,7 +1,7 @@
 import drivers
 from time import sleep
 
-display = drivers.lcd()
+display = drivers.Lcd()
 
 
 def long_string(display, text='', num_line=1, num_cols=16):

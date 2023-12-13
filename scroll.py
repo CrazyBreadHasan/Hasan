@@ -38,12 +38,12 @@ try:
 
 
 	# Example of short string
-        display.set_backlight(display.BLUE)
+        display.set_Lcd_backlight(display.BLUE)
 	long_string(display, "Hello World!", 1)
 	sleep(1)
 
 	# Example of long string
-        display.set_backlight(display.BLUE)
+        display.set_Lcd_backlight(display.BLUE)
 	long_string(display, "Hello again. This is a long text.", 2)
 	display.lcd_clear()
 	sleep(1)
