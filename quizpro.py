@@ -96,7 +96,7 @@ def speel_spel(amount: int, catogory: int) -> None:
             led_aan_rood()
             punten -= 1
 
-            # punten_led()
+            punten_led()
 
 
 
