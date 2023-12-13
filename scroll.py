@@ -11,6 +11,7 @@ from time import sleep
 # Load the driver and set it to "display"
 # If you use something from the driver library use the "display." prefix first
 display = drivers.Lcd()
+display.set_backlight(display.BLUE)
 
 # Main body of code
 try:
