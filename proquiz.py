@@ -1,3 +1,5 @@
+import os
+
 import requests
 import html
 import random
@@ -5,6 +7,7 @@ import RPi.GPIO as GPIO
 import time
 from time import sleep
 import drivers
+from os import system
 
 display = drivers.Lcd()
 
@@ -23,6 +26,11 @@ def vragen_ophalen(amount: int, category: int) -> list:
     response = requests.get(url)
     response_json = response.json()
     return response_json["results"]
+
+def temp_print(val: str):
+    print(val)
+    time.sleep(1)
+    system('cls' if os.name == 'nt' else 'clear')
 
 
 def long_string(display, text='', num_line=1, num_cols=16):
@@ -113,7 +121,8 @@ def speel_spel(amount: int, catogory: int) -> None:
 
 
         elif geb_keuze_tekst != juiste_antwoord_tekst:
-            long_string(display, "Incorrect", 2)
+            temp_print(long_string(display, "incorrect", 2))
+            # long_string(display, "Incorrect", 2)
             display.lcd_clear()
             led_aan_rood()
             punten -= 1
