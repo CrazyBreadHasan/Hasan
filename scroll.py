@@ -18,6 +18,9 @@ try:
 	print("Press CTRL + C to stop this script!")
 
 	def long_string(display, text='', num_line=1, num_cols=16):
+
+
+
 		"""
 		Parameters: (driver, string to print, number of line to print, number of columns of your display)
 		Return: This function send to display your scrolling string.
@@ -35,10 +38,12 @@ try:
 
 
 	# Example of short string
+        display.set_backlight(display.BLUE)
 	long_string(display, "Hello World!", 1)
 	sleep(1)
 
 	# Example of long string
+        display.set_backlight(display.BLUE)
 	long_string(display, "Hello again. This is a long text.", 2)
 	display.lcd_clear()
 	sleep(1)
