@@ -20,6 +20,7 @@ def long_string(display, text='', num_line=1, num_cols=16):
     else:
         display.lcd_display_string(text, num_line)
 
-display.set_Lcd_backlight(display.BLUE)
+
+display.lcd_backlight(display.RED)
 long_string(display, "Hello World!", 1)
 sleep(1)
