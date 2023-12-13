@@ -21,6 +21,6 @@ def long_string(display, text='', num_line=1, num_cols=16):
         display.lcd_display_string(text, num_line)
 
 
-display.lcd_backlight(1)
+display.lcd_backlight(0)
 long_string(display, "Hello World!", 1)
 sleep(1)
