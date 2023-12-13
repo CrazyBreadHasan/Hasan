@@ -112,7 +112,8 @@ def speel_spel(amount: int, catogory: int) -> None:
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
         if geb_keuze_tekst == juiste_antwoord_tekst:
-            long_string(display, "Juist", 2)
+            temp_print(long_string(display, "Correct", 2))
+            # long_string(display, "Juist", 2)
             display.lcd_clear()
 
             led_aan_groen()
