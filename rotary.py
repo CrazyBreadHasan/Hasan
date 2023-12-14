@@ -20,14 +20,20 @@ try:
     while True:
         clkstate = GPIO.input(clk)
         dtstate = GPIO.input(dt)
-        if clkstate != clklaststate or dtstate != dtlaststate: # check both pins for changes
-            if clkstate != dtlaststate: # if they are different, it means clockwise rotation
+        if clkstate != clklaststate or dtstate != dtlaststate:  # check both pins for changes
+            if clkstate != dtlaststate:  # if they are different, it means clockwise rotation
                 counter += 1
-            else: # if they are the same, it means counter-clockwise rotation
+            else:  # if they are the same, it means counter-clockwise rotation
                 counter -= 1
             print(counter)
 
-        clklaststate = clkstate # update the previous states
+            # add the if statement to limit the counter range
+            if counter < 0:  # if the counter is below the minimum
+                counter = 0  # reset it to 0
+            elif counter > 20:  # if the counter is above the maximum
+                counter = 20  # reset it to 20
+
+        clklaststate = clkstate  # update the previous states
         dtlaststate = dtstate
         sleep(0.001)
 finally:
