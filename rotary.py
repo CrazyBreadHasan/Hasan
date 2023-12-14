@@ -25,7 +25,8 @@ try:
             # Ensure the counter stays within the range [0, 20]
             counter = max(0, min(20, counter))
 
-            print(counter)
+            # print(counter)
+            print(dtState)
 
             # If the counter has reached 20, exit the loop
             if counter == 20:
