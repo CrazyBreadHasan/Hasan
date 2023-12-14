@@ -151,10 +151,11 @@ def speel_spel(amount: int, catogory: int) -> None:
         keuzes.extend([vraag["correct_answer"]])
         mix_vragen = vragen_mixen(keuzes)
         print_keuzes(mix_vragen)
+        encoder()
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
-        encoder()
+
         if geb_keuze_tekst == juiste_antwoord_tekst:
             temp_print(long_string(display, "Correct", 2))
             # long_string(display, "Juist", 2)
