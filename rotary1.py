@@ -11,7 +11,7 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
-counter = 0
+counter = max(0, min(20, counter)) # clip the counter to 0 to 20
 
 clklaststate = GPIO.input(clk)
 dtlaststate = GPIO.input(dt)
