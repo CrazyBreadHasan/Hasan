@@ -53,7 +53,7 @@ def encoder():
                 counter = max(0, min(20, counter))
                 print(counter)
 
-                if  0 <=   counter <= 5:
+                if  0 <=   counter <= 5 and GPIO.input(clk) == True:
                     print("Hello")
 
 
