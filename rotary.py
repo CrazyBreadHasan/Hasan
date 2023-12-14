@@ -30,24 +30,24 @@ try:
         if clkstate != clklaststate or dtstate != dtlaststate:  # check both pins for changes
             # get the current time
             current_time = time.time()
-            # check if enough time has passed since the last interrupt
+
             if current_time - last_interrupt_time > DEBOUNCE_TIME:
                 # update the counter
-                if clkstate != dtlaststate:  # if they are different, it means clockwise rotation
+                if clkstate != dtlaststate:
                     counter += 1
-                else:  # if they are the same, it means counter-clockwise rotation
+                else:
                     counter -= 1
 
-                counter = max(0, min(20, counter))  # clip the counter to 0 to 20
+                counter = max(0, min(20, counter))
                 print(counter)
 
-                # add the if statement to limit the counter range
 
 
-            # update the last interrupt time
+
+
             last_interrupt_time = current_time
 
-        clklaststate = clkstate  # update the previous states
+        clklaststate = clkstate
         dtlaststate = dtstate
         sleep(0.001)
 finally:
