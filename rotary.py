@@ -12,6 +12,7 @@ GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 counter = 0
+counter = max(0, min(20, counter)) # clip the counter to 0 to 20
 
 clklaststate = GPIO.input(clk)
 dtlaststate = GPIO.input(dt)
@@ -39,10 +40,7 @@ try:
                 print(counter)
 
                 # add the if statement to limit the counter range
-                if counter < 0:  # if the counter is below the minimum
-                    counter = 0  # reset it to 0
-                elif counter > 20:  # if the counter is above the maximum
-                    counter = 20  # reset it to 20
+
 
             # update the last interrupt time
             last_interrupt_time = current_time
