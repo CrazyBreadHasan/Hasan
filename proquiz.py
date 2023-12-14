@@ -4,10 +4,13 @@ import requests
 import html
 import random
 import RPi.GPIO as GPIO
+from thonny.plugins.micropython.generic_api_stubs.pyb import LCD
+
 import time
 from time import sleep
 import drivers
 from os import system
+
 
 display = drivers.Lcd()
 
@@ -136,7 +139,15 @@ def speel_spel(amount: int, catogory: int) -> None:
 
 
 if __name__ == '__main__':
-    amount = 3
-    category = 18
-    speel_spel(amount, category)
-    print(punten)
+
+    try:
+        amount = 3
+        category = 18
+        speel_spel(amount, category)
+        print(punten)
+    except KeyboardInterrupt:
+        print("Keyboard interrupt. Cleaning up GPIO.")
+        GPIO.cleanup()
+    finally:
+        GPIO.cleanup()
+        display.lcd_clear()
