@@ -24,7 +24,7 @@ def update_counter(channel):
         # Ensure the counter stays within the range [0, 20]
         counter = max(0, min(20, counter))
         # print(counter)
-        print(dtState)
+        print(counter)
         # If the counter has reached 20, exit the program
         if counter == 20:
             GPIO.cleanup()
