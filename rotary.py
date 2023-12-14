@@ -1,72 +1,38 @@
-# This Raspberry Pi code was developed by newbiely.com
-# This Raspberry Pi code is made available for public use without any restriction
-# For comprehensive instructions and wiring diagrams, please visit:
-# https://newbiely.com/tutorials/raspberry-pi/raspberry-pi-rotary-encoder
-
-
 import RPi.GPIO as GPIO
-import time
+from time import sleep
 
-# Pin numbers on Raspberry Pi
-CLK_PIN = 7   # GPIO7 connected to the rotary encoder's CLK pin
-DT_PIN = 8    # GPIO8 connected to the rotary encoder's DT pin
-SW_PIN = 25   # GPIO25 connected to the rotary encoder's SW pin
+clk = 17
+dt = 18
 
-DIRECTION_CW = 0
-DIRECTION_CCW = 1
-
-counter = 0
-direction = DIRECTION_CW
-CLK_state = 0
-prev_CLK_state = 0
-
-button_pressed = False
-prev_button_state = GPIO.HIGH
-
-# Configure GPIO pins
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(CLK_PIN, GPIO.IN)
-GPIO.setup(DT_PIN, GPIO.IN)
-GPIO.setup(SW_PIN, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
+GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
-# Read the initial state of the rotary encoder's CLK pin
-prev_CLK_state = GPIO.input(CLK_PIN)
+counter = 10
+clkLastState = GPIO.input(clk)
 
 try:
     while True:
-        # Read the current state of the rotary encoder's CLK pin
-        CLK_state = GPIO.input(CLK_PIN)
+        clkState = GPIO.input(clk)
+        dtState = GPIO.input(dt)
 
-        # If the state of CLK is changed, then pulse occurred
-        # React to only the rising edge (from LOW to HIGH) to avoid double count
-        if CLK_state != prev_CLK_state and CLK_state == GPIO.HIGH:
-            # If the DT state is HIGH, the encoder is rotating in counter-clockwise direction
-            # Decrease the counter
-            if GPIO.input(DT_PIN) == GPIO.HIGH:
-                counter -= 1
-                direction = DIRECTION_CCW
-            else:
-                # The encoder is rotating in clockwise direction => increase the counter
+        if clkState != clkLastState:
+            if dtState != clkState:
                 counter += 1
-                direction = DIRECTION_CW
-
-            print("Rotary Encoder:: direction:", "CLOCKWISE" if direction == DIRECTION_CW else "ANTICLOCKWISE",
-                  "- count:", counter)
-
-        # Save last CLK state
-        prev_CLK_state = CLK_state
-
-        # State change detection for the button
-        button_state = GPIO.input(SW_PIN)
-        if button_state != prev_button_state:
-            time.sleep(0.01)  # Add a small delay to debounce
-            if button_state == GPIO.LOW:
-                print("The button is pressed")
-                button_pressed = True
             else:
-                button_pressed = False
+                counter -= 1
 
-        prev_button_state = button_state
+            # Ensure the counter stays within the range [0, 20]
+            counter = max(0, min(20, counter))
 
-except KeyboardInterrupt:
-    GPIO.cleanup()  # Clean up GPIO on program exit
+            print(counter)
+
+            # If the counter has reached 20, exit the loop
+            if counter == 20:
+                break
+
+        clkLastState = clkState
+        sleep(0.01)
+
+finally:
+    GPIO.cleanup()
