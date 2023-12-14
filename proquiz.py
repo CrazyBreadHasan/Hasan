@@ -4,7 +4,7 @@ import requests
 import html
 import random
 import RPi.GPIO as GPIO
-from thonny.plugins.micropython.generic_api_stubs.pyb import LCD
+# from thonny.plugins.micropython.generic_api_stubs.pyb import LCD
 
 import time
 from time import sleep
