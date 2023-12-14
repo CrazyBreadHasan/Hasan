@@ -61,6 +61,8 @@ def encoder():
 
 
 
+
+
 # vragen ophalen
 def vragen_ophalen(amount: int, category: int) -> list:
     url = f"https://opentdb.com/api.php?amount={amount}&category={category}"
@@ -152,6 +154,7 @@ def speel_spel(amount: int, catogory: int) -> None:
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
+        encoder()
         if geb_keuze_tekst == juiste_antwoord_tekst:
             temp_print(long_string(display, "Correct", 2))
             # long_string(display, "Juist", 2)
@@ -179,7 +182,7 @@ def speel_spel(amount: int, catogory: int) -> None:
 if __name__ == '__main__':
 
     try:
-        encoder()
+        # encoder()
         amount = 3
         category = 18
         clk = 17
