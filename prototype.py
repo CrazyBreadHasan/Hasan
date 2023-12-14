@@ -35,7 +35,7 @@ def encoder():
     last_interrupt_time = 0
 
 
-    DEBOUNCE_TIME = 0.01
+    DEBOUNCE_TIME = 0.1
     while True:
         clkstate = GPIO.input(clk)
         dtstate = GPIO.input(dt)
