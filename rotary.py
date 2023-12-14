@@ -49,6 +49,6 @@ try:
 
         clklaststate = clkstate
         dtlaststate = dtstate
-        sleep(0.001)
+        sleep(1)
 finally:
     GPIO.cleanup()
