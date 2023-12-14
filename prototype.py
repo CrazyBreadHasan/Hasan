@@ -31,20 +31,20 @@ def encoder():
     clklaststate = GPIO.input(clk)
     dtlaststate = GPIO.input(dt)
 
-    # add a variable to store the last interrupt time
+
     last_interrupt_time = 0
 
-    # add a constant to define the minimum time between interrupts
-    DEBOUNCE_TIME = 0.01  # in seconds
+
+    DEBOUNCE_TIME = 0.01
     while True:
         clkstate = GPIO.input(clk)
         dtstate = GPIO.input(dt)
-        if clkstate != clklaststate or dtstate != dtlaststate:  # check both pins for changes
-            # get the current time
+        if clkstate != clklaststate or dtstate != dtlaststate:
+
             current_time = time.time()
 
             if current_time - last_interrupt_time > DEBOUNCE_TIME:
-                # update the counter
+
                 if clkstate != dtlaststate:
                     counter += 1
                 else:
@@ -52,6 +52,10 @@ def encoder():
 
                 counter = max(0, min(20, counter))
                 print(counter)
+
+                if  0 <=   counter <= 5:
+                    print("Hello")
+
 
             last_interrupt_time = current_time
 
