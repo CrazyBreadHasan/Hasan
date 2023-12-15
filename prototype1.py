@@ -149,36 +149,6 @@ def pak_gebruiker_keuze() -> int:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
 
-def switch_event(event):
-    global counter
-
-    if event == RotaryEncoder.CLOCKWISE:
-        counter += 1
-        if counter in range(0, 5):
-            long_string(display, "pepper1", 2)
-
-        elif counter in range(6, 10):
-            long_string(display, "pepper2", 2)
-        elif counter in range(11, 15):
-            long_string(display, "pepper3", 2)
-    elif event == RotaryEncoder.ANTICLOCKWISE:
-        counter -= 1
-
-    elif event == RotaryEncoder.BUTTONDOWN:
-        if counter in range(0, 5):
-            print("Pepper")
-
-        elif counter in range(6, 10):
-            print("Green")
-        elif counter in range(11, 15):
-            print("Red")
-        elif counter in range(16, 20):
-            print("Yellow")
-    elif event == RotaryEncoder.BUTTONUP:
-        print("Button up")
-    counter = max(0, min(20, counter))
-
-    print(counter)
 
 # spel spelen
 def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> None:
@@ -222,6 +192,37 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
             punten -= 1
 
             punten_led()
+
+def switch_event(event):
+    global counter
+
+    if event == RotaryEncoder.CLOCKWISE:
+        counter += 1
+        if counter in range(0, 5):
+            long_string(display, "pepper1", 2)
+
+        elif counter in range(6, 10):
+            long_string(display, "pepper2", 2)
+        elif counter in range(11, 15):
+            long_string(display, "pepper3", 2)
+    elif event == RotaryEncoder.ANTICLOCKWISE:
+        counter -= 1
+
+    elif event == RotaryEncoder.BUTTONDOWN:
+        if counter in range(0, 5):
+            print("pepper")
+
+        elif counter in range(6, 10):
+            print("Green")
+        elif counter in range(11, 15):
+            print("Red")
+        elif counter in range(16, 20):
+            print("Yellow")
+    elif event == RotaryEncoder.BUTTONUP:
+        print("Button up")
+    counter = max(0, min(20, counter))
+
+    print(counter)
 
 
 
