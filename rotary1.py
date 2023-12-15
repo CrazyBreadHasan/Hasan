@@ -3,6 +3,10 @@ import time
 
 from roatary import RotaryEncoder
 
+PIN_A = 17 # Pin 8
+PIN_B = 18 # Pin 10
+BUTTON = 4 # Pin 7
+
 def switch_event(event):
     if event == RotaryEncoder.CLOCKWISE:
         print("Clockwise")
