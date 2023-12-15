@@ -10,6 +10,7 @@ import time
 from time import sleep
 import drivers
 from os import system
+from roatary import RotaryEncoder
 clk = 17
 dt = 18
 GPIO.setmode(GPIO.BCM)
@@ -23,7 +24,16 @@ punten = 0
 goed = 0
 fout = 0
 
-
+def switch_event(event):
+    if event == RotaryEncoder.CLOCKWISE:
+        print("Clockwise")
+    elif event == RotaryEncoder.ANTICLOCKWISE:
+        print("Anticlockwise")
+    elif event == RotaryEncoder.BUTTONDOWN:
+        print("Button down")
+    elif event == RotaryEncoder.BUTTONUP:
+        print("Button up")
+    return
 
 def encoder():
     counter = 0
@@ -157,7 +167,8 @@ def speel_spel(amount: int, catogory: int) -> None:
         keuzes.extend([vraag["correct_answer"]])
         mix_vragen = vragen_mixen(keuzes)
         print_keuzes(mix_vragen)
-        encoder()
+        switch_event()
+        # encoder()
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
