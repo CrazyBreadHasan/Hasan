@@ -26,6 +26,7 @@ fout = 0
 
 def switch_event(event):
     counter = 0
+while True:
     if event == RotaryEncoder.CLOCKWISE:
         counter +=1
     elif event == RotaryEncoder.ANTICLOCKWISE:
