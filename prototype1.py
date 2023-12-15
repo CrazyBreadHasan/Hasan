@@ -205,7 +205,7 @@ if __name__ == '__main__':
         category = 18
         clk = 17
         dt = 18
-        speel_spel(amount, category)
+        speel_spel(amount, category, encoder_instance=switch_event())
         print(punten)
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
