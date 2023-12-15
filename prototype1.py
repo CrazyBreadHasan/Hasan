@@ -41,19 +41,19 @@ def switch_event(event):
     elif event == RotaryEncoder.ANTICLOCKWISE:
             counter -= 1
 
-    elif event == RotaryEncoder.BUTTONDOWN:
-        if counter in range (0, 5):
-            print("Peper")
-            long_string(display, "Pepper", 2)
-        elif counter in range (6, 10):
-            print("Green")
-        elif counter in range (11, 15):
-            print("Red")
-        elif counter in range (16,20):
-            print("Yellow")
-    elif event == RotaryEncoder.BUTTONUP:
-            print("Button up")
-    counter = max(0, min(20, counter))
+    # elif event == RotaryEncoder.BUTTONDOWN:
+    #     if counter in range (0, 5):
+    #         print("Peper")
+    #         long_string(display, "Pepper", 2)
+    #     elif counter in range (6, 10):
+    #         print("Green")
+    #     elif counter in range (11, 15):
+    #         print("Red")
+    #     elif counter in range (16,20):
+    #         print("Yellow")
+    # elif event == RotaryEncoder.BUTTONUP:
+    #         print("Button up")
+    # counter = max(0, min(20, counter))
 
     print(counter)
 
