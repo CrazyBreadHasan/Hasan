@@ -186,8 +186,8 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
 
         if 0 <= counter <= 5:
-            if GPIO.input(4) == GPIO.LOW:
-                long_string(display, html.unescape(vraag["correct_answer"],2))
+            if GPIO.input(4) == True:
+                long_string(display, html.unescape(vraag["correct_answer"], 2))
 
         if geb_keuze_tekst == juiste_antwoord_tekst:
             temp_print(long_string(display, "Correct", 2))
