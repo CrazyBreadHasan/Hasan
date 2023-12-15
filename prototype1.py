@@ -201,4 +201,4 @@ if __name__ == '__main__':
         GPIO.cleanup()
     finally:
         GPIO.cleanup()
-        display.lcd_clear()
+        display.lcd_clear() #ok
