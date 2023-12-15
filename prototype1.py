@@ -26,18 +26,19 @@ fout = 0
 
 def switch_event(event):
     counter = 0
-while True:
-    if event == RotaryEncoder.CLOCKWISE:
-        counter +=1
-    elif event == RotaryEncoder.ANTICLOCKWISE:
-        counter -=1
+    while True:
+        if event == RotaryEncoder.CLOCKWISE:
+            counter +=1
+        elif event == RotaryEncoder.ANTICLOCKWISE:
+            counter -=1
 
-    elif event == RotaryEncoder.BUTTONDOWN:
-        print("Button down")
-    elif event == RotaryEncoder.BUTTONUP:
-        print("Button up")
-    counter = max(0, min(20, counter))
-    print(counter)
+        elif event == RotaryEncoder.BUTTONDOWN:
+            print("Button down")
+        elif event == RotaryEncoder.BUTTONUP:
+            print("Button up")
+        counter = max(0, min(20, counter))
+
+        print(counter)
 
 
 def encoder():
