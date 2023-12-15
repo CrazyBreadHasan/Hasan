@@ -166,6 +166,7 @@ def pak_gebruiker_keuze() -> int:
 # spel spelen
 def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> None:
     global punten
+    global counter
     ophalen = vragen_ophalen(amount, catogory)
     for vraag in ophalen:
         vraag_text = html.unescape(vraag["question"])
@@ -173,7 +174,10 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
         keuzes = vraag["incorrect_answers"]
         keuzes.extend([vraag["correct_answer"]])
         mix_vragen = vragen_mixen(keuzes)
-        print_keuzes(mix_vragen)
+        if counter in range(0, 5):
+            long_string(display, print_keuzes(mix_vragen))
+
+        # print_keuzes(mix_vragen)
 
         event = encoder_instance.getSwitchState(clk)
         switch_event(event)
