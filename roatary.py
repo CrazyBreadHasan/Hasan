@@ -1,6 +1,7 @@
 import RPi.GPIO as GPIO
 
 class RotaryEncoder:
+
     CLOCKWISE = 1
     ANTICLOCKWISE = 2
     BUTTONDOWN = 3
@@ -41,6 +42,7 @@ class RotaryEncoder:
         else:
             self.rotary_b = 0
 
+        # print(str(self.rotary_a) + str(self.rotary_b))
         self.rotary_c = self.rotary_a ^ self.rotary_b
         new_state = self.rotary_a * 4 + self.rotary_b * 2 + self.rotary_c * 1
         delta = (new_state - self.last_state) % 4
@@ -49,12 +51,14 @@ class RotaryEncoder:
 
         if delta == 1:
             if self.direction == self.CLOCKWISE:
-                event = self.direction
+                # print "Clockwise"
+                event = self.CLOCKWISE
             else:
                 self.direction = self.CLOCKWISE
         elif delta == 3:
             if self.direction == self.ANTICLOCKWISE:
-                event = self.direction
+                # print "Anticlockwise"
+                event = self.ANTICLOCKWISE
             else:
                 self.direction = self.ANTICLOCKWISE
 
@@ -70,20 +74,3 @@ class RotaryEncoder:
 
     def getSwitchState(self, switch):
         return GPIO.input(switch)
-
-
-# Example usage:
-PIN_A = 14
-PIN_B = 15
-BUTTON = 18
-
-def callback(event):
-    print(f"Event: {event}")
-
-rswitch = RotaryEncoder(PIN_A, PIN_B, BUTTON, callback)
-
-try:
-    while True:
-        pass
-except KeyboardInterrupt:
-    GPIO.cleanup()
