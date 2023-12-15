@@ -35,7 +35,7 @@ def switch_event(event):
         print("Button down")
     elif event == RotaryEncoder.BUTTONUP:
         print("Button up")
-     counter = max(0, min(20, counter)
+    counter = max(0, min(20, counter)
     print(counter)
 
 
