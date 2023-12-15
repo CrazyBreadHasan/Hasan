@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
 
-
 class RotaryEncoder:
     CLOCKWISE = 1
     ANTICLOCKWISE = 2
@@ -61,7 +60,6 @@ class RotaryEncoder:
 
         if event > 0:
             self.callback(event)
-        return
 
     def button_event(self, button):
         if GPIO.input(button):
@@ -79,11 +77,10 @@ PIN_A = 14
 PIN_B = 15
 BUTTON = 18
 
+def callback(event):
+    print(f"Event: {event}")
 
-
-
-
-rswitch = RotaryEncoder(PIN_A, PIN_B, BUTTON)
+rswitch = RotaryEncoder(PIN_A, PIN_B, BUTTON, callback)
 
 try:
     while True:
