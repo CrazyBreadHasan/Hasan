@@ -86,7 +86,7 @@ def getSwitchState(self, switch):
 
 import sys
 import time
-from rotary_class import RotaryEncoder
+# from rotary_class import RotaryEncoder
 
 # Define GPIO inputs
 PIN_A = 17 # Pin 8
