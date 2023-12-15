@@ -79,8 +79,7 @@ PIN_B = 15
 BUTTON = 18
 
 
-def callback_function(event):
-    print(f"Event: {event}")
+
 
 
 rswitch = RotaryEncoder(PIN_A, PIN_B, BUTTON, callback_function)
