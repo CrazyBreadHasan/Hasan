@@ -82,7 +82,7 @@ BUTTON = 18
 
 
 
-rswitch = RotaryEncoder(PIN_A, PIN_B, BUTTON, callback_function)
+rswitch = RotaryEncoder(PIN_A, PIN_B, BUTTON)
 
 try:
     while True:
