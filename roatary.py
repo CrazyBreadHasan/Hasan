@@ -61,6 +61,7 @@ class RotaryEncoder:
 
         if event > 0:
             self.callback(event)
+        return
 
     def button_event(self, button):
         if GPIO.input(button):
