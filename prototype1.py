@@ -173,7 +173,9 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
         keuzes.extend([vraag["correct_answer"]])
         mix_vragen = vragen_mixen(keuzes)
         print_keuzes(mix_vragen)
-        switch_event(encoder_instance.getSwitchState(clk))
+
+        event = encoder_instance.getSwitchState(clk)
+        switch_event(event)
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
