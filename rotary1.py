@@ -18,7 +18,7 @@ def switch_event(event):
         print("Button up")
     return
 
-rswitch = RotaryEncoder(PIN_A,PIN_B,BUTTON,self.switch_event)
+rswitch = RotaryEncoder(PIN_A,PIN_B,BUTTON,switch_event)
 
 while True:
  for counter in range(120):
