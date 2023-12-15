@@ -205,7 +205,7 @@ if __name__ == '__main__':
         category = 18
         clk = 17
         dt = 18
-        encoder_instance = RotaryEncoder()
+        encoder_instance = RotaryEncoder(pinA, pinB, button, callback)
         speel_spel(amount, category, encoder_instance)
         print(punten)
     except KeyboardInterrupt:
