@@ -26,12 +26,16 @@ class RotaryEncoder:
         GPIO.setup(self.button, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
         # Add event detection to the GPIO inputs
-        GPIO.add_event_detect(self.pinA, GPIO.BOTH, callback=self.switch_event)
-        GPIO.add_event_detect(self.pinB, GPIO.BOTH, callback=self.switch_event)
+        GPIO.add_event_detect(self.pinA, GPIO.BOTH, callback=self._switch_event_wrapper)
+        GPIO.add_event_detect(self.pinB, GPIO.BOTH, callback=self._switch_event_wrapper)
         GPIO.add_event_detect(self.button, GPIO.BOTH, callback=self.button_event)
 
+    # Wrapper for switch_event to handle instance method callback
+    def _switch_event_wrapper(self, channel):
+        self.switch_event(channel)
+
     # Call back routine called by switch events
-    def switch_event(self, switch):
+    def switch_event(self, channel):
         if GPIO.input(self.pinA):
             self.rotary_a = 1
         else:
@@ -65,8 +69,8 @@ class RotaryEncoder:
         if event > 0:
             self.callback(event)
 
-    def button_event(self, button):
-        if GPIO.input(button):
+    def button_event(self, channel):
+        if GPIO.input(channel):
             event = self.BUTTONUP
         else:
             event = self.BUTTONDOWN
