@@ -157,7 +157,7 @@ def pak_gebruiker_keuze() -> int:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
 # spel spelen
-def speel_spel(amount: int, catogory: int) -> None:
+def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> None:
     global punten
     ophalen = vragen_ophalen(amount, catogory)
     for vraag in ophalen:
@@ -167,7 +167,7 @@ def speel_spel(amount: int, catogory: int) -> None:
         keuzes.extend([vraag["correct_answer"]])
         mix_vragen = vragen_mixen(keuzes)
         print_keuzes(mix_vragen)
-        switch_event(event)
+        switch_event(encoder_instance.getSwitchState(clk))
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
