@@ -20,12 +20,13 @@ GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 display = drivers.Lcd()
 
 global punten
+counter = 0
 punten = 0
 goed = 0
 fout = 0
 
 def switch_event(event):
-    counter = 0
+    global counter
 
     if event == RotaryEncoder.CLOCKWISE:
             counter += 1
