@@ -30,7 +30,7 @@ class RotaryEncoder:
  # Add event detection to the GPIO inputs
         GPIO.add_event_detect(self.pinA, GPIO.BOTH, callback=self.switch_event)
         GPIO.add_event_detect(self.pinB, GPIO.BOTH, callback=self.switch_event)
-        GPIO.add_event_detect(self.button, GPIO.BOTH, callback=self.button_even)
+        GPIO.add_event_detect(self.button, GPIO.BOTH, callback=self.button_event)
         return
 
         # Call back routine called by switch events
