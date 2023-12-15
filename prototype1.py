@@ -32,6 +32,8 @@ def switch_event(event):
             counter += 1
             if counter in range (0, 5):
                 long_string(display, "pepper1", 2)
+                if GPIO.input(clk) == False:
+                    print("Kanker")
             elif counter in range (6, 10):
                 long_string(display, "pepper2", 2)
             elif counter in range (11, 15):
