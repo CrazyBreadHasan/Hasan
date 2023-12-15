@@ -30,6 +30,8 @@ def switch_event(event):
 
     if event == RotaryEncoder.CLOCKWISE:
             counter += 1
+            if counter in range (0, 5):
+                long_string(display, "pepper1", 2)
     elif event == RotaryEncoder.ANTICLOCKWISE:
             counter -= 1
 
