@@ -210,7 +210,7 @@ def switch_event(event):
 
     elif event == RotaryEncoder.BUTTONDOWN:
         if counter in range(0, 5):
-            print("pepper")
+            long_string(display, "Jatoch", 2)
 
         elif counter in range(6, 10):
             print("Green")
