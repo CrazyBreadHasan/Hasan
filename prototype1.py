@@ -54,7 +54,7 @@ def encoder():
                 print(counter)
 
                 if 0 <= counter <= 5:
-                    if GPIO.input(clk):
+                    if GPIO.input(clk) == False:
                         # and (GPIO.input(clk, GPIO.LOW))):
                         print("Hello")
 
