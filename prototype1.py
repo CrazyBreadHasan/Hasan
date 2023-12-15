@@ -32,7 +32,7 @@ def switch_event(event):
             counter += 1
             if counter in range (0, 5):
                 long_string(display, "pepper1", 2)
-                if event == RotaryEncoder.ButtonDOWN:
+                if event == RotaryEncoder.BUTTONDOWN:
                     print("Kanker")
             elif counter in range (6, 10):
                 long_string(display, "pepper2", 2)
