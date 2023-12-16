@@ -13,7 +13,7 @@ clk = 17
 dt = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP) #okok
 display = drivers.Lcd()
 
 global punten
