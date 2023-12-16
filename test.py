@@ -51,7 +51,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, juis
     global punten
     global counter
     ophalen = vragen_ophalen(amount, catogory)
-    juiste_antwoord_tekst = ""
+
     for vraag in ophalen:
         vraag_text = html.unescape(vraag["question"])
         long_string(display, vraag_text, 1)
@@ -100,7 +100,7 @@ def switch_event(event, juiste_antwoord_tekst):
             long_string(display, "pepper1", 2)
 
         elif counter in range(6, 10):
-            long_string(display, text = juiste_antwoord_tekst,num_line= 2)
+            long_string(display, text = "pepper2",num_line= 2)
         elif counter in range(11, 15):
             long_string(display, "pepper3", 2)
     elif event == RotaryEncoder.ANTICLOCKWISE:
@@ -181,7 +181,7 @@ if __name__ == '__main__':
         clk = 17
         dt = 18
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
-        speel_spel(amount, category, encoder_instance, juiste_antwoord_tekst=switch_event)
+        speel_spel(amount, category, encoder_instance)
         print(punten)
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
