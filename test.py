@@ -55,11 +55,14 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
     ophalen = vragen_ophalen(amount, catogory)
 
     for vraag in ophalen:
+        type = vraag["type"]
         vraag_text = html.unescape(vraag["question"])
         long_string(display, vraag_text, 1)
         keuzes = vraag["incorrect_answers"]
         keuzes.extend([vraag["correct_answer"]])
         mix_vragen = vragen_mixen(keuzes)
+
+        print(type)
 
 
         keuze_text= print_keuzes(mix_vragen)
