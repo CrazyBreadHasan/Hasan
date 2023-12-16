@@ -47,7 +47,7 @@ def pak_gebruiker_keuze() -> int:
         else:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
-def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> None:
+def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, juiste_antwoord_tekst) -> None:
     global punten
     global counter
     ophalen = vragen_ophalen(amount, catogory)
@@ -63,7 +63,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
         print_keuzes(mix_vragen)
 
         event = encoder_instance.getSwitchState(clk)
-        switch_event(event)
+        switch_event(event, juiste_antwoord_tekst)
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
@@ -181,7 +181,8 @@ if __name__ == '__main__':
         clk = 17
         dt = 18
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
-        speel_spel(amount, category, encoder_instance)
+        juiste_antwoord_tekst = ""
+        speel_spel(amount, category, encoder_instance, juiste_antwoord_tekst)
         print(punten)
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
