@@ -51,6 +51,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, juis
     global punten
     global counter
     ophalen = vragen_ophalen(amount, catogory)
+    juiste_antwoord_tekst = ""
     for vraag in ophalen:
         vraag_text = html.unescape(vraag["question"])
         long_string(display, vraag_text, 1)
