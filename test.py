@@ -36,8 +36,10 @@ def vragen_mixen(keuze: list) ->list:
     return keuze
 
 def print_keuzes(keuzes: list) -> str:
+    choices_string = ""
     for keuze_index, keuze in enumerate(keuzes):
-        print(f"{keuze_index+1}. {html.unescape(keuze)}")
+        choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
+    return choices_string
 
 def pak_gebruiker_keuze() -> int:
     while True:
