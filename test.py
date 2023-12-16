@@ -59,9 +59,9 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
         keuzes.extend([vraag["correct_answer"]])
         mix_vragen = vragen_mixen(keuzes)
 
-        print(mix_vragen)
-        for i, keuze in enumerate(mix_vragen):
-            long_string(display, f"{i + 1}. {html.unescape(keuze)}", num_line=2)
+
+        print_keuzes(mix_vragen)
+        long_string(display, text=print_keuzes(mix_vragen), num_line= 2)
 
         event = encoder_instance.getSwitchState(clk)
         switch_event(event)
