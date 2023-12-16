@@ -7,7 +7,7 @@ import time
 from time import sleep
 import drivers
 from os import system
-from rotary import RotaryEncoder
+from roatary import RotaryEncoder
 
 clk = 17
 dt = 18
