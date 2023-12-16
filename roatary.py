@@ -31,8 +31,8 @@ class RotaryEncoder:
         GPIO.add_event_detect(self.button, GPIO.BOTH, callback=self.button_event)
 
     # Wrapper for switch_event to handle instance method callback
-    def _switch_event_wrapper(self, channel):
-        self.switch_event(channel)
+    def _switch_event_wrapper(self, channel, juiste_antwoord_tekst):
+        self.switch_event(channel, juiste_antwoord_tekst)
 
     # Call back routine called by switch events
     def switch_event(self, channel, juiste_antwoord_tekst):
