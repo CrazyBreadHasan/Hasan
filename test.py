@@ -91,7 +91,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
             punten_led()
         return juiste_antwoord_tekst
 
-def switch_event(event):
+def switch_event(event, juiste_antwoord_tekst):
     global counter
 
     if event == RotaryEncoder.CLOCKWISE:
@@ -111,7 +111,7 @@ def switch_event(event):
             long_string(display, "Jatoch", 2)
 
         elif counter in range(6, 10):
-            print("Green")
+            long_string(display, text=juiste_antwoord_tekst, num_line= 2)
         elif counter in range(11, 15):
             print("Red")
         elif counter in range(16, 20):
