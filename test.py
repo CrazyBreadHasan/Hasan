@@ -35,7 +35,7 @@ def vragen_mixen(keuze: list) ->list:
     random.shuffle(keuze)
     return keuze
 
-def print_keuzes(keuzes: list) -> None:
+def print_keuzes(keuzes: list) -> str:
     for keuze_index, keuze in enumerate(keuzes):
         print(f"{keuze_index+1}. {html.unescape(keuze)}")
 
