@@ -91,7 +91,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
             punten_led()
         return juiste_antwoord_tekst
 
-def switch_event(event, juiste_antwoord_tekst):
+def switch_event(event):
     global counter
 
     if event == RotaryEncoder.CLOCKWISE:
