@@ -69,7 +69,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
         long_string(display, text= keuze_text, num_line= 2)
 
         event = encoder_instance.getSwitchState(clk)
-        switch_event(event, type_vraag)
+        switch_event(event)
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
@@ -95,32 +95,15 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
             punten -= 1
 
             punten_led()
-    return juiste_antwoord_tekst, type_vraag
+        return juiste_antwoord_tekst
 
-
-def switch_event(event, type_vraag):
+def switch_event(event):
     global counter
 
     if event == RotaryEncoder.CLOCKWISE:
         counter += 1
-        if type_vraag == "multiple":
-            if counter in range(0, 5):
-                print("1")
-            elif counter in range(6, 10):
-                print("2")
-            elif counter in range(11, 15):
-                print("3")
-            elif counter in range(16, 20):
-                print("4")
-        elif type_vraag == "boolean":
-            if counter in range(0, 5):
-                print("True")
-            elif counter in range(6, 10):
-                print("False")
-            elif counter in range(11, 15):
-                print("True")
-            elif counter in range(16, 20):
-                print("False")
+
+
 
 
 
@@ -152,7 +135,7 @@ def long_string(display, text='', num_line=1, num_cols=16):
             text_to_print = text[i:i + num_cols]
             display.lcd_display_string(text_to_print, num_line)
             sleep(0.2)
-        sleep(0.1)
+        sleep(1)
     else:
         display.lcd_display_string(text, num_line)
 
