@@ -69,9 +69,9 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
 
 
-        correct ="Correct"
+
         if geb_keuze_tekst == juiste_antwoord_tekst:
-            temp_print(long_string(display, text=correct, num_line=2))
+            temp_print(long_string(display, text=juiste_antwoord_tekst, num_line=2))
             # long_string(display, "Juist", 2)
             display.lcd_clear()
 
