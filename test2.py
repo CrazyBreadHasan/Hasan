@@ -68,4 +68,6 @@ def switch_event(event):
     print(counter)
 
 if __name__ == '__main__':
-    switch_event()
+    encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
+    event = encoder_instance.getSwitchState(clk)
+    switch_event(event)
