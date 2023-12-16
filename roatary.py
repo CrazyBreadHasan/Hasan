@@ -35,7 +35,7 @@ class RotaryEncoder:
         self.switch_event(channel)
 
     # Call back routine called by switch events
-    def switch_event(self, channel):
+    def switch_event(self, channel, juiste_antwoord_tekst):
         if GPIO.input(self.pinA):
             self.rotary_a = 1
         else:
@@ -67,7 +67,7 @@ class RotaryEncoder:
                 self.direction = self.ANTICLOCKWISE
 
         if event > 0:
-            self.callback(event)
+            self.callback(event, juiste_antwoord_tekst)
 
     def button_event(self, channel):
         if GPIO.input(channel):
