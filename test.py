@@ -99,29 +99,23 @@ def switch_event(event):
 
     if event == RotaryEncoder.CLOCKWISE:
         counter += 1
-        if counter in range(0, 5):
-            long_string(display, "pepper1", 2)
 
-        elif counter in range(6, 10):
-            long_string(display, text = "pepper2",num_line= 2)
-        elif counter in range(11, 15):
-            long_string(display, "pepper3", 2)
+
+
+
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
     elif event == RotaryEncoder.BUTTONDOWN:
-        if counter in range(0, 5):
-            long_string(display, "Jatoch", 2)
+        print("Button pressed")
 
-        elif counter in range(6, 10):
-            long_string(display, text="Komt goed", num_line= 2)
-        elif counter in range(11, 15):
-            print("Red")
-        elif counter in range(16, 20):
-            print("Yellow")
+
+
+
+
     elif event == RotaryEncoder.BUTTONUP:
-        print("Button up")
-    counter = max(0, min(20, counter))
+        print("Button released")
+
 
     print(counter)
 
