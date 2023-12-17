@@ -49,7 +49,7 @@ def pak_gebruiker_keuze() -> int:
         else:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
-def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> None:
+def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type_vraag) -> None:
     global punten
     global counter
     ophalen = vragen_ophalen(amount, catogory)
@@ -194,7 +194,7 @@ if __name__ == '__main__':
         dt = 18
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
 
-        speel_spel(amount, category, encoder_instance)
+        speel_spel(amount, category, encoder_instance, type_vraag)
         print(punten)
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
