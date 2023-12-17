@@ -31,11 +31,12 @@ class RotaryEncoder:
         GPIO.add_event_detect(self.button, GPIO.BOTH, callback=self.button_event)
 
     # Wrapper for switch_event to handle instance method callback
-    def _switch_event_wrapper(self, channel, type_vraag):
-        self.switch_event(channel, type_vraag)
+    def _switch_event_wrapper(self, channel):
+        self.switch_event(channel, self.type_vraag)
 
     # Call back routine called by switch events
     def switch_event(self, channel, type_vraag):
+        self.type_vraag = type_vraag
         if GPIO.input(self.pinA):
             self.rotary_a = 1
         else:
