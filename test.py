@@ -69,7 +69,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
         long_string(display, text= keuze_text, num_line= 2)
 
         event = encoder_instance.getSwitchState(clk)
-        switch_event(event)
+        switch_event(event, type_vraag)
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
