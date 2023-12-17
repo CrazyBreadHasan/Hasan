@@ -95,28 +95,37 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
             punten -= 1
 
             punten_led()
-        return juiste_antwoord_tekst
+        return juiste_antwoord_tekst, type_vraag
 
-def switch_event(event):
+def switch_event(event, type_vraag):
     global counter
 
     if event == RotaryEncoder.CLOCKWISE:
         counter += 1
-
-
-
-
-
+        if type_vraag == "multiple":
+            if counter in range(0, 5):
+                print("1")
+            elif counter in range(6, 10):
+                print("2")
+            elif counter in range(11, 15):
+                print("3")
+            elif counter in range(16, 20):
+                print("4")
+        elif type_vraag == "boolean":
+            if counter in range(0, 5):
+                print("True")
+            elif counter in range(6, 10):
+                print("False")
+            elif counter in range(11, 15):
+                print("True")
+            elif counter in range(16, 20):
+                print("False")
 
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
-
-
-
-
 
     elif event == RotaryEncoder.BUTTONUP:
         print("Button released")
