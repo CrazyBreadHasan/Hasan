@@ -121,7 +121,7 @@ def switch_event(event):
     elif event == RotaryEncoder.BUTTONUP:
         print("Button released")
 
-    counter = min(20, max(20, counter))
+    counter = min(20, max(0, counter))
     print(counter)
 
 def long_string(display, text='', num_line=1, num_cols=16):
