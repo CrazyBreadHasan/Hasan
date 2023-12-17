@@ -19,6 +19,7 @@ class RotaryEncoder:
         self.pinB = pinB
         self.button = button
         self.callback = callback
+        self.type_vraag = None
         GPIO.setmode(GPIO.BCM)
         GPIO.setwarnings(False)
         GPIO.setup(self.pinA, GPIO.IN, pull_up_down=GPIO.PUD_UP)
