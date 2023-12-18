@@ -104,6 +104,7 @@ def switch_event(event, type_vraag):
         counter += 1
         if type_vraag == "multiple":
             if counter in range(1, 5):
+                display.lcd_clear()
                 long_string(display, "1", 2)
             elif counter in range(6, 10):
                 long_string(display,"2", 2)
