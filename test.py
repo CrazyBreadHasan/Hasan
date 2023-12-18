@@ -100,28 +100,20 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 def switch_event(event, type_vraag):
     global counter
 
-    print(f"Before increment: Counter = {counter}")
-
     if event == RotaryEncoder.CLOCKWISE:
         counter += 1
-        print(f"After increment: Counter = {counter}")
-
         if type_vraag == "multiple":
             if counter in range(1, 5):
                 display.lcd_clear()
                 long_string(display, "1", 2)
             elif counter in range(6, 10):
+                display.lcd_clear()
                 print("Counter is in the range (6, 10)")
-                display.lcd_clear()
-                long_string(display, "2", 2)
+                long_string(display,"2", 2)
             elif counter in range(11, 15):
-                print("Counter is in the range (11, 15)")
-                display.lcd_clear()
-                long_string(display, "3", 2)
+                print("3")
             elif counter in range(16, 20):
-                print("Counter is in the range (16, 20)")
-                display.lcd_clear()
-                long_string(display, "4", 2)
+                print("4")
         elif type_vraag == "boolean":
             if counter in range(0, 5):
                 long_string(display, "True", 2)
