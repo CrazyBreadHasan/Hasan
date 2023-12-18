@@ -97,7 +97,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             punten_led()
         return juiste_antwoord_tekst, type_vraag
 
- def switch_event(event, type_vraag):
+def switch_event(event, type_vraag):
     global counter
 
     print(f"Before increment: Counter = {counter}")
