@@ -103,7 +103,7 @@ def switch_event(event, type_vraag):
     if event == RotaryEncoder.CLOCKWISE:
         counter += 1
         if type_vraag == "multiple":
-            if counter in range(0, 5):
+            if counter in range(1, 5):
                 long_string(display, "1", 2)
             elif counter in range(6, 10):
                 long_string(display,"2", 2)
