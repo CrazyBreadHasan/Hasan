@@ -106,7 +106,7 @@ def switch_event(event, type_vraag):
             if counter in range(1, 5):
                 display.lcd_clear()
                 long_string(display, "1", 2)
-            elif counter in range(6, 10):
+            if counter in range(6, 10):
                 display.lcd_clear()
                 long_string(display,"2", 2)
             elif counter in range(11, 15):
