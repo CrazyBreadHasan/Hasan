@@ -106,7 +106,7 @@ def switch_event(event, type_vraag):
             if counter in range(0, 5):
                 long_string(display, "1", 2)
             elif counter in range(6, 10):
-                print("2")
+                long_string(display,"2", 2)
             elif counter in range(11, 15):
                 print("3")
             elif counter in range(16, 20):
