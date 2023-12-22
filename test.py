@@ -42,21 +42,18 @@ def vragen_mixen(keuze: list) ->list:
 def print_keuzes(keuzes: list, type_vraag) -> str:
     global keuze1, keuze2, keuze3, keuze4
     choices_string = ""
-    print(type_vraag)
 
     for keuze_index, keuze in enumerate(keuzes):
         choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
-        # splitted_choices = choices_string.split(",")
-
-        # print(splitted_choices[1])
 
     if (type_vraag.__eq__("multiple")):
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
         keuze3 =choices_string.split("\n")[2]
         keuze4 = choices_string.split("\n")[3]
-        # keuze1, keuze2, keuze3, keuze4 = choices_string.split(",")
-        print(keuze1, keuze2, keuze3, keuze4)
+    elif(type_vraag.__eq__("boolean")):
+        keuze1 = choices_string.split("\n")[0]
+        keuze2 = choices_string.split("\n")[1]
 
     return choices_string
 
@@ -133,11 +130,11 @@ def switch_event(event, type_vraag):
             elif counter in range(6, 10):
                 display.lcd_clear()
                 print("Counter is in the range (6, 10)")
-                long_string(display,"2", 2)
+                long_string(display,text=keuze2,num_line= 2)
             elif counter in range(11, 15):
-                print("3")
+                long_string(display,text=keuze3, num_line= 2)
             elif counter in range(16, 20):
-                print("4")
+                long_string(display,text=keuze4, num_line= 2)
         elif type_vraag.__eq__("boolean"):
             if counter in range(0, 5):
                 long_string(display, "True", 2)
