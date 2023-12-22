@@ -104,28 +104,29 @@ def switch_event(event, type_vraag):
         counter += 1
         display.lcd_clear()
         long_string(display, text=str(counter), num_line=2)
-        if type_vraag == "multiple":
-
-            # if counter <=5:
-            #     display.lcd_clear()
-            #     long_string(display, "1", 2)
-            # elif counter >=6:
-            #     display.lcd_clear()
-            #     print("Counter is in the range (6, 10)")
-            #     long_string(display,"2", 2)
-            # elif counter in range(11, 15):
-            #     print("3")
-            # elif counter in range(16, 20):
-            #     print("4")
-        elif type_vraag == "boolean":
-            if counter in range(0, 5):
-                long_string(display, "True", 2)
-            elif counter in range(6, 10):
-                long_string(display, "False", 2)
-            elif counter in range(11, 15):
-                print("True")
-            elif counter in range(16, 20):
-                print("False")
+        # if type_vraag == "multiple":
+        #
+        #
+        #     # if counter <=5:
+        #     #     display.lcd_clear()
+        #     #     long_string(display, "1", 2)
+        #     # elif counter >=6:
+        #     #     display.lcd_clear()
+        #     #     print("Counter is in the range (6, 10)")
+        #     #     long_string(display,"2", 2)
+        #     # elif counter in range(11, 15):
+        #     #     print("3")
+        #     # elif counter in range(16, 20):
+        #     #     print("4")
+        # elif type_vraag == "boolean":
+        #     if counter in range(0, 5):
+        #         long_string(display, "True", 2)
+        #     elif counter in range(6, 10):
+        #         long_string(display, "False", 2)
+        #     elif counter in range(11, 15):
+        #         print("True")
+        #     elif counter in range(16, 20):
+        #         print("False")
 
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
