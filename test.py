@@ -101,6 +101,7 @@ def switch_event(event, type_vraag):
     global counter
 
     if event == RotaryEncoder.CLOCKWISE:
+        print(type_vraag)
         counter += 1
         display.lcd_clear()
         long_string(display, text=str(counter), num_line=2)
@@ -200,6 +201,7 @@ if __name__ == '__main__':
         clk = 17
         dt = 18
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
+
 
         speel_spel(amount, category, encoder_instance, type_vraag="multiple")
         print(punten)
