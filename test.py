@@ -39,12 +39,13 @@ def print_keuzes(keuzes: list) -> str:
     choices_string = ""
 
     for keuze_index, keuze in enumerate(keuzes):
-        type_vraag = keuze["type"]
+        print(keuze)
+        # type_vraag = keuze["type"]
         choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
         splitted_choices = choices_string.split(",")
-        if(type_vraag.__eq__("multiple")):
-            keuze1, keuze2, keuze3, keuze4 = splitted_choices
-            print(keuze1)
+        # if(type_vraag.__eq__("multiple")):
+        #     keuze1, keuze2, keuze3, keuze4 = splitted_choices
+        #     print(keuze1)
         # print(splitted_choices[1])
 
     return choices_string
