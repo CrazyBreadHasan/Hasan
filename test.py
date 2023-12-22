@@ -21,6 +21,10 @@ counter = 0
 punten = 0
 goed = 0
 fout = 0
+global keuze1
+global keuze2
+global keuze3
+global keuze4
 
 
 
@@ -36,6 +40,7 @@ def vragen_mixen(keuze: list) ->list:
     return keuze
 
 def print_keuzes(keuzes: list, type_vraag) -> str:
+    global keuze1, keuze2, keuze3, keuze4
     choices_string = ""
     print(type_vraag)
 
@@ -53,7 +58,7 @@ def print_keuzes(keuzes: list, type_vraag) -> str:
         # keuze1, keuze2, keuze3, keuze4 = choices_string.split(",")
         print(keuze1, keuze2, keuze3, keuze4)
 
-    return keuze1, keuze2, keuze3, keuze4
+    return choices_string
 
 def pak_gebruiker_keuze() -> int:
     while True:
@@ -112,8 +117,8 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             punten_led()
         return juiste_antwoord_tekst, type_vraag
 
-def switch_event(event, type_vraag, keuze1, keuze2, keuze3, keuze4):
-    global counter
+def switch_event(event, type_vraag):
+    global counter, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
         print(type_vraag)
