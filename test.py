@@ -40,7 +40,7 @@ def print_keuzes(keuzes: list) -> str:
     for keuze_index, keuze in enumerate(keuzes):
         choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
         splitted_choices = choices_string.split(",")
-        print(splitted_choices[0])
+        print(splitted_choices[3])
 
     return choices_string
 
