@@ -35,11 +35,11 @@ def vragen_mixen(keuze: list) ->list:
     random.shuffle(keuze)
     return keuze
 
-def print_keuzes(keuzes: list) -> str:
+def print_keuzes(keuzes: list, type_vraag) -> str:
     choices_string = ""
 
     for keuze_index, keuze in enumerate(keuzes):
-        print(keuze)
+        print(type_vraag)
         # type_vraag = keuze["type"]
         choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
         splitted_choices = choices_string.split(",")
@@ -74,7 +74,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
 
 
-        keuze_text= print_keuzes(mix_vragen)
+        keuze_text= print_keuzes(mix_vragen, type_vraag)
         print(keuze_text)
         long_string(display, text= keuze_text, num_line= 2)
 
