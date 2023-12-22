@@ -105,22 +105,19 @@ def switch_event(event, type_vraag):
         counter += 1
 
         if type_vraag.__eq__("multiple"):
-            display.lcd_clear()
-            long_string(display, text=str(counter), num_line=2)
-
-
-
-            # if counter <=5:
-            #     display.lcd_clear()
-            #     long_string(display, "1", 2)
-            # elif counter >=6:
-            #     display.lcd_clear()
-            #     print("Counter is in the range (6, 10)")
-            #     long_string(display,"2", 2)
-            # elif counter in range(11, 15):
-            #     print("3")
-            # elif counter in range(16, 20):
-            #     print("4")
+            # display.lcd_clear()
+            # long_string(display, text=str(counter), num_line=2)
+            if counter in range(1, 5):
+                display.lcd_clear()
+                long_string(display, "1", 2)
+            elif counter in range(6, 10):
+                display.lcd_clear()
+                print("Counter is in the range (6, 10)")
+                long_string(display,"2", 2)
+            elif counter in range(11, 15):
+                print("3")
+            elif counter in range(16, 20):
+                print("4")
         elif type_vraag == "boolean":
             if counter in range(0, 5):
                 long_string(display, "True", 2)
