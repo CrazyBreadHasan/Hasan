@@ -39,7 +39,9 @@ def print_keuzes(keuzes: list) -> str:
     choices_string = ""
     for keuze_index, keuze in enumerate(keuzes):
         choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
-        print( choices_string.split(","))
+        splitted_choices = choices_string.split(",")
+        print(splitted_choices[0])
+
     return choices_string
 
 def pak_gebruiker_keuze() -> int:
