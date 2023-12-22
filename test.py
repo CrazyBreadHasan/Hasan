@@ -49,11 +49,11 @@ def print_keuzes(keuzes: list, type_vraag) -> str:
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
         keuze3 =choices_string.split("\n")[2]
-        keuze4 = choices_string.split("\n")[1]
+        keuze4 = choices_string.split("\n")[3]
         # keuze1, keuze2, keuze3, keuze4 = choices_string.split(",")
         print(keuze1, keuze2, keuze3, keuze4)
 
-    return choices_string
+    return keuze1, keuze2, keuze3, keuze4
 
 def pak_gebruiker_keuze() -> int:
     while True:
@@ -80,7 +80,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
 
         keuze_text= print_keuzes(mix_vragen, type_vraag)
-
+        print(keuze_text)
         long_string(display, text= keuze_text, num_line= 2)
 
         event = encoder_instance.getSwitchState(clk)
@@ -112,7 +112,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             punten_led()
         return juiste_antwoord_tekst, type_vraag
 
-def switch_event(event, type_vraag):
+def switch_event(event, type_vraag, keuze1, keuze2, keuze3, keuze4):
     global counter
 
     if event == RotaryEncoder.CLOCKWISE:
@@ -124,7 +124,7 @@ def switch_event(event, type_vraag):
             # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
                 display.lcd_clear()
-                long_string(display, "1", 2)
+                long_string(display, text=keuze1, num_line=2)
             elif counter in range(6, 10):
                 display.lcd_clear()
                 print("Counter is in the range (6, 10)")
