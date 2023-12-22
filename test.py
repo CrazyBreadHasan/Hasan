@@ -39,7 +39,7 @@ def print_keuzes(keuzes: list) -> str:
     choices_string = ""
     for keuze_index, keuze in enumerate(keuzes):
         choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
-        # choices_string.split(",")
+        print( choices_string.split(","))
     return choices_string
 
 def pak_gebruiker_keuze() -> int:
@@ -99,7 +99,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             punten_led()
         return juiste_antwoord_tekst, type_vraag
 
-def switch_event(event, type_vraag, vraag):
+def switch_event(event, type_vraag):
     global counter
 
     if event == RotaryEncoder.CLOCKWISE:
