@@ -46,9 +46,12 @@ def print_keuzes(keuzes: list, type_vraag) -> str:
         # print(splitted_choices[1])
 
     if (type_vraag.__eq__("multiple")):
+        keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
+        keuze3 =choices_string.split("\n")[2]
+        keuze4 = choices_string.split("\n")[1]
         # keuze1, keuze2, keuze3, keuze4 = choices_string.split(",")
-        print(keuze2)
+        print(keuze1, keuze2, keuze3, keuze4)
 
     return choices_string
 
@@ -77,7 +80,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
 
         keuze_text= print_keuzes(mix_vragen, type_vraag)
-        print(keuze_text)
+
         long_string(display, text= keuze_text, num_line= 2)
 
         event = encoder_instance.getSwitchState(clk)
