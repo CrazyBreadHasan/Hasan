@@ -46,7 +46,7 @@ def print_keuzes(keuzes: list, type_vraag) -> str:
         # print(splitted_choices[1])
 
     if (type_vraag.__eq__("multiple")):
-        keuze2 = choices_string.split(",")[1]
+        keuze2 = choices_string.split("\n")[1]
         # keuze1, keuze2, keuze3, keuze4 = choices_string.split(",")
         print(keuze2)
 
