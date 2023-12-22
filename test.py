@@ -118,7 +118,7 @@ def switch_event(event, type_vraag):
                 print("3")
             elif counter in range(16, 20):
                 print("4")
-        elif type_vraag == "boolean":
+        elif type_vraag.__eq__("boolean"):
             if counter in range(0, 5):
                 long_string(display, "True", 2)
             elif counter in range(6, 10):
