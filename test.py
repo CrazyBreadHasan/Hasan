@@ -141,9 +141,9 @@ def switch_event(event, type_vraag):
             elif counter in range(6, 10):
                 long_string(display, keuze2, 2)
             elif counter in range(11, 15):
-                print("True")
+                long_string(display, keuze1, 2)
             elif counter in range(16, 20):
-                print("False")
+                long_string(display, keuze2, 2)
 
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
