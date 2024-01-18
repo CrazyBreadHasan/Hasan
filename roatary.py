@@ -71,12 +71,12 @@ class RotaryEncoder:
         if event > 0:
             self.callback(event, type_vraag)
 
-    def button_event(self, channel, type_vraag):
+    def button_event(self, channel):
         if GPIO.input(channel):
             event = self.BUTTONUP
         else:
             event = self.BUTTONDOWN
-            self.callback(event, self.type_vraag)
+            self.callback(event)
 
     def getSwitchState(self, switch):
         return GPIO.input(switch)
