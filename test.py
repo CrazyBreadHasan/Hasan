@@ -148,29 +148,7 @@ def switch_event(event, type_vraag):
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
-        if type_vraag.__eq__("multiple"):
-            # display.lcd_clear()
-            # long_string(display, text=str(counter), num_line=2)
-            if counter in range(1, 5):
-                display.lcd_clear()
-                long_string(display, text=keuze1, num_line=2)
-            elif counter in range(6, 10):
-                display.lcd_clear()
-                print("Counter is in the range (6, 10)")
-                long_string(display,text=keuze2,num_line= 2)
-            elif counter in range(11, 15):
-                long_string(display,text=keuze3, num_line= 2)
-            elif counter in range(16, 20):
-                long_string(display,text=keuze4, num_line= 2)
-        elif type_vraag.__eq__("boolean"):
-            if counter in range(0, 5):
-                long_string(display, keuze1, 2)
-            elif counter in range(6, 10):
-                long_string(display, keuze2, 2)
-            elif counter in range(11, 15):
-                long_string(display, keuze1, 2)
-            elif counter in range(16, 20):
-                long_string(display, keuze2, 2)
+
 
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
