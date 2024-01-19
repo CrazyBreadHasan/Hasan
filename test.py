@@ -135,7 +135,7 @@ def switch_event(event, type_vraag):
                 long_string(display,text=keuze3, num_line= 2)
             elif counter in range(16, 20):
                 long_string(display,text=keuze4, num_line= 2)
-        elif type_vraag.__eq__("boolean"):
+        elif type_vraag == "boolean":
             if counter in range(0, 5):
                 long_string(display, keuze1, 2)
             elif counter in range(6, 10):
