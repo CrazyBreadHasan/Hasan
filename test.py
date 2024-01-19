@@ -155,7 +155,7 @@ def switch_event(event, type_vraag):
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
 
-        if (type_vraag.__eq__( "multiple")):
+        if type_vraag == "multiple":
             # display.lcd_clear()
             # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
