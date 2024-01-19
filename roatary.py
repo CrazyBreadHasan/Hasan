@@ -76,7 +76,7 @@ class RotaryEncoder:
             event = self.BUTTONUP
         else:
             event = self.BUTTONDOWN
-            self.callback(event)
+            self.callback(event, type_vraag)
 
     def getSwitchState(self, switch):
         return GPIO.input(switch)
