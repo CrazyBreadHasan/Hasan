@@ -33,11 +33,11 @@ class RotaryEncoder:
 
     # Wrapper for switch_event to handle instance method callback
     def _switch_event_wrapper(self, channel):
-        self.switch_event(channel, self.type_vraag)
+        self.switch_event(channel)
 
     # Call back routine called by switch events
-    def switch_event(self, channel, type_vraag):
-        self.type_vraag = type_vraag
+    def switch_event(self, channel):
+        # self.type_vraag = type_vraag
         if GPIO.input(self.pinA):
             self.rotary_a = 1
         else:
@@ -69,7 +69,7 @@ class RotaryEncoder:
                 self.direction = self.ANTICLOCKWISE
 
         if event > 0:
-            self.callback(event, type_vraag)
+            self.callback(event)
 
     def button_event(self, channel):
 
