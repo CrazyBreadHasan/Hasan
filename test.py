@@ -51,7 +51,7 @@ def print_keuzes(keuzes: list, type_vraag) -> str:
         keuze2 = choices_string.split("\n")[1]
         keuze3 =choices_string.split("\n")[2]
         keuze4 = choices_string.split("\n")[3]
-    elif(type_vraag.__eq__("boolean")):
+    else:
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
 
@@ -135,7 +135,7 @@ def switch_event(event, type_vraag):
                 long_string(display,text=keuze3, num_line= 2)
             elif counter in range(16, 20):
                 long_string(display,text=keuze4, num_line= 2)
-        elif (type_vraag.__eq__("boolean")):
+        else:
             if counter in range(0, 5):
                 long_string(display, keuze1, 2)
             elif counter in range(6, 10):
@@ -167,7 +167,7 @@ def switch_event(event, type_vraag):
                 input("3")
             elif counter in range(16, 20):
                 input("4")
-        elif (type_vraag.__eq__( "boolean")):
+        else:
             if counter in range(1, 5):
                 input("1")
             elif counter in range(6, 10):
