@@ -150,6 +150,8 @@ def switch_event(event, type_vraag):
 
 
 
+
+
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
 
@@ -165,6 +167,7 @@ def switch_event(event, type_vraag):
                 input("3")
             elif counter in range(16, 20):
                 input("4")
+        switch_event(event, type_vraag)
 
     elif event == RotaryEncoder.BUTTONUP:
         print("Button released")
