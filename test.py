@@ -121,7 +121,7 @@ def switch_event(event, type_vraag):
         print(type_vraag)
         counter += 1
 
-        if type_vraag.__eq__("multiple"):
+        if (type_vraag.__eq__("multiple")):
             # display.lcd_clear()
             # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
@@ -135,7 +135,7 @@ def switch_event(event, type_vraag):
                 long_string(display,text=keuze3, num_line= 2)
             elif counter in range(16, 20):
                 long_string(display,text=keuze4, num_line= 2)
-        elif type_vraag.__eq__("boolean"):
+        elif (type_vraag.__eq__("boolean")):
             if counter in range(0, 5):
                 long_string(display, keuze1, 2)
             elif counter in range(6, 10):
@@ -155,7 +155,7 @@ def switch_event(event, type_vraag):
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
 
-        if type_vraag.__eq__( "multiple"):
+        if (type_vraag.__eq__( "multiple")):
             # display.lcd_clear()
             # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
@@ -167,7 +167,7 @@ def switch_event(event, type_vraag):
                 input("3")
             elif counter in range(16, 20):
                 input("4")
-        elif type_vraag.__eq__( "boolean"):
+        elif (type_vraag.__eq__( "boolean")):
             if counter in range(1, 5):
                 input("1")
             elif counter in range(6, 10):
