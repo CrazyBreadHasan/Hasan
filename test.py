@@ -167,6 +167,8 @@ def switch_event(event, type_vraag):
                 input("3")
             elif counter in range(16, 20):
                 input("4")
+            else:
+                print("Invalid")
         else:
             if counter in range(1, 5):
                 input("1")
