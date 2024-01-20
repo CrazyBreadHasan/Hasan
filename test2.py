@@ -21,6 +21,10 @@ counter = 0
 punten = 0
 goed = 0
 fout = 0
+global keuze1
+global keuze2
+global keuze3
+global keuze4
 
 
 
@@ -35,10 +39,22 @@ def vragen_mixen(keuze: list) ->list:
     random.shuffle(keuze)
     return keuze
 
-def print_keuzes(keuzes: list) -> str:
+def print_keuzes(keuzes: list, type_vraag) -> str:
+    global keuze1, keuze2, keuze3, keuze4
     choices_string = ""
+
     for keuze_index, keuze in enumerate(keuzes):
         choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
+
+    if type_vraag == "multiple":
+        keuze1 = choices_string.split("\n")[0]
+        keuze2 = choices_string.split("\n")[1]
+        keuze3 =choices_string.split("\n")[2]
+        keuze4 = choices_string.split("\n")[3]
+    else:
+        keuze1 = choices_string.split("\n")[0]
+        keuze2 = choices_string.split("\n")[1]
+
     return choices_string
 
 def pak_gebruiker_keuze() -> int:
@@ -49,7 +65,7 @@ def pak_gebruiker_keuze() -> int:
         else:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
-def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> None:
+def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type_vraag) -> None:
     global punten
     global counter
     ophalen = vragen_ophalen(amount, catogory)
@@ -65,7 +81,8 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
 
 
 
-        keuze_text= print_keuzes(mix_vragen)
+        keuze_text= print_keuzes(mix_vragen, type_vraag)
+        print(keuze_text)
         long_string(display, text= keuze_text, num_line= 2)
 
         event = encoder_instance.getSwitchState(clk)
@@ -95,51 +112,88 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder) -> N
             punten -= 1
 
             punten_led()
-    return juiste_antwoord_tekst, type_vraag
+        return juiste_antwoord_tekst, type_vraag
 
-
-def switch_event(event, type_vraag):
-    global counter
+def switch_event(event, type_vraag, correct_answer_index):
+    global counter, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
+        print(type_vraag)
         counter += 1
+
         if type_vraag == "multiple":
-            if counter in range(0, 5):
-                print("1")
+            # display.lcd_clear()
+            # long_string(display, text=str(counter), num_line=2)
+            if counter in range(1, 5):
+                display.lcd_clear()
+                long_string(display, text=keuze1, num_line=2)
             elif counter in range(6, 10):
-                print("2")
+                display.lcd_clear()
+                print("Counter is in the range (6, 10)")
+                long_string(display,text=keuze2,num_line= 2)
             elif counter in range(11, 15):
-                print("3")
+                long_string(display,text=keuze3, num_line= 2)
             elif counter in range(16, 20):
-                print("4")
-        elif type_vraag == "boolean":
+                long_string(display,text=keuze4, num_line= 2)
+        else:
             if counter in range(0, 5):
-                print("True")
+                long_string(display, keuze1, 2)
             elif counter in range(6, 10):
-                print("False")
+                long_string(display, keuze2, 2)
             elif counter in range(11, 15):
-                print("True")
+                long_string(display, keuze1, 2)
             elif counter in range(16, 20):
-                print("False")
-
-
-
+                long_string(display, keuze2, 2)
 
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
+
+
+
+
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
 
+        if type_vraag == "multiple":
+            if counter in range(1, 5):
+                gebruiker_keuze = 1
+            elif counter in range(6, 10):
+                gebruiker_keuze = 2
+            elif counter in range(11, 15):
+                gebruiker_keuze = 3
+            elif counter in range(16, 20):
+                gebruiker_keuze = 4
+            else:
+                print("Invalid")
+        else:
+            if counter in range(1, 5):
+                gebruiker_keuze = 1
+            elif counter in range(6, 10):
+                gebruiker_keuze = 2
+            elif counter in range(11, 15):
+                gebruiker_keuze = 1
+            elif counter in range(16, 20):
+                gebruiker_keuze = 2
+
+        # Continue with the rest of your code using gebruiker_keuze
+        print(f"User choice: {gebruiker_keuze}")
+
+        # Now you can use gebruiker_keuze to check if the answer is correct
+        if gebruiker_keuze == correct_answer_index:
+            print("Correct answer!")
+            # Handle correct answer logic here
+        else:
+            print("Incorrect answer.")
+            # Handle incorrect answer logic here
+
+        # Continue with the rest of your code
+        switch_event(event, type_vraag)
 
 
-
-
-    elif event == RotaryEncoder.BUTTONUP:
-        print("Button released")
-
-
+    counter = min(20, max(0, counter))
     print(counter)
+
 
 def long_string(display, text='', num_line=1, num_cols=16):
 
@@ -147,12 +201,12 @@ def long_string(display, text='', num_line=1, num_cols=16):
     if len(text) > num_cols:
 
         display.lcd_display_string(text[:num_cols], num_line)
-        sleep(1)
+        sleep(0.5)
         for i in range(len(text) - num_cols + 1):
             text_to_print = text[i:i + num_cols]
             display.lcd_display_string(text_to_print, num_line)
             sleep(0.2)
-        sleep(0.1)
+        sleep(0.5)
     else:
         display.lcd_display_string(text, num_line)
 
@@ -202,7 +256,8 @@ if __name__ == '__main__':
         dt = 18
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
 
-        speel_spel(amount, category, encoder_instance)
+
+        speel_spel(amount, category, encoder_instance, type_vraag="multiple")
         print(punten)
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
