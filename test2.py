@@ -46,12 +46,12 @@ def print_keuzes(keuzes: list, type_vraag) -> str:
     for keuze_index, keuze in enumerate(keuzes):
         choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
 
-    if type_vraag == "multiple":
+    if (type_vraag.__eq__("multiple")):
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
         keuze3 =choices_string.split("\n")[2]
         keuze4 = choices_string.split("\n")[3]
-    else:
+    elif(type_vraag.__eq__("boolean")):
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
 
@@ -121,7 +121,7 @@ def switch_event(event, type_vraag):
         print(type_vraag)
         counter += 1
 
-        if type_vraag == "multiple":
+        if type_vraag.__eq__("multiple"):
             # display.lcd_clear()
             # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
@@ -135,59 +135,27 @@ def switch_event(event, type_vraag):
                 long_string(display,text=keuze3, num_line= 2)
             elif counter in range(16, 20):
                 long_string(display,text=keuze4, num_line= 2)
-        else:
+        elif type_vraag.__eq__("boolean"):
             if counter in range(0, 5):
-                long_string(display, keuze1, 2)
+                long_string(display, "True", 2)
             elif counter in range(6, 10):
-                long_string(display, keuze2, 2)
+                long_string(display, "False", 2)
             elif counter in range(11, 15):
-                long_string(display, keuze1, 2)
+                print("True")
             elif counter in range(16, 20):
-                long_string(display, keuze2, 2)
+                print("False")
 
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
-
-
-
-
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
-
-        if type_vraag ==  "multiple":
-            # display.lcd_clear()
-            # long_string(display, text=str(counter), num_line=2)
-            if counter in range(1, 5):
-                input("1")
-            elif counter in range(6, 10):
-                input("2")
-
-            elif counter in range(11, 15):
-                input("3")
-            elif counter in range(16, 20):
-                input("4")
-            else:
-                print("Invalid")
-        else:
-            if counter in range(1, 5):
-                input("1")
-            elif counter in range(6, 10):
-                input("2")
-
-            elif counter in range(11, 15):
-                input("1")
-            elif counter in range(16, 20):
-                input("2")
-
-        switch_event(event, type_vraag)
 
     elif event == RotaryEncoder.BUTTONUP:
         print("Button released")
 
     counter = min(20, max(0, counter))
     print(counter)
-
 
 def long_string(display, text='', num_line=1, num_cols=16):
 
