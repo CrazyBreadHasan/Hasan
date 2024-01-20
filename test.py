@@ -135,7 +135,7 @@ def switch_event(event, type_vraag):
                 long_string(display,text=keuze3, num_line= 2)
             elif counter in range(16, 20):
                 long_string(display,text=keuze4, num_line= 2)
-        else:
+        elif type_vraag == "boolean":
             if counter in range(0, 5):
                 long_string(display, keuze1, 2)
             elif counter in range(6, 10):
@@ -184,6 +184,8 @@ def switch_event(event, type_vraag):
 
     elif event == RotaryEncoder.BUTTONUP:
         print("Button released")
+
+
 
     counter = min(20, max(0, counter))
     print(counter)
