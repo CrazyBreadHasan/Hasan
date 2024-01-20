@@ -86,7 +86,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
         long_string(display, text= keuze_text, num_line= 2)
 
         event = encoder_instance.getSwitchState(clk)
-        switch_event(event, type_vraag, correct_answer_index)
+        switch_event(event, type_vraag)
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze()
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
@@ -114,7 +114,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             punten_led()
         return juiste_antwoord_tekst, type_vraag
 
-def switch_event(event, type_vraag, correct_answer_index):
+def switch_event(event, type_vraag):
     global counter, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
@@ -155,41 +155,35 @@ def switch_event(event, type_vraag, correct_answer_index):
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
 
-        if type_vraag == "multiple":
+        if type_vraag ==  "multiple":
+            # display.lcd_clear()
+            # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
-                gebruiker_keuze = 1
+                input("1")
             elif counter in range(6, 10):
-                gebruiker_keuze = 2
+                input("2")
+
             elif counter in range(11, 15):
-                gebruiker_keuze = 3
+                input("3")
             elif counter in range(16, 20):
-                gebruiker_keuze = 4
+                input("4")
             else:
                 print("Invalid")
         else:
             if counter in range(1, 5):
-                gebruiker_keuze = 1
+                input("1")
             elif counter in range(6, 10):
-                gebruiker_keuze = 2
+                input("2")
+
             elif counter in range(11, 15):
-                gebruiker_keuze = 1
+                input("1")
             elif counter in range(16, 20):
-                gebruiker_keuze = 2
+                input("2")
 
-        # Continue with the rest of your code using gebruiker_keuze
-        print(f"User choice: {gebruiker_keuze}")
-
-        # Now you can use gebruiker_keuze to check if the answer is correct
-        if gebruiker_keuze == correct_answer_index:
-            print("Correct answer!")
-            # Handle correct answer logic here
-        else:
-            print("Incorrect answer.")
-            # Handle incorrect answer logic here
-
-        # Continue with the rest of your code
         switch_event(event, type_vraag)
 
+    elif event == RotaryEncoder.BUTTONUP:
+        print("Button released")
 
     counter = min(20, max(0, counter))
     print(counter)
@@ -257,7 +251,7 @@ if __name__ == '__main__':
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
 
 
-        speel_spel(amount, category, encoder_instance, type_vraag="multiple" or "boolean")
+        speel_spel(amount, category, encoder_instance, type_vraag="multiple")
         print(punten)
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
@@ -265,4 +259,3 @@ if __name__ == '__main__':
     finally:
         GPIO.cleanup()
         display.lcd_clear() #ok
-
