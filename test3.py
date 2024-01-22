@@ -66,6 +66,9 @@ def pak_gebruiker_keuze() -> int:
         else:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
+def pak_gebruiker_keuze_rotary():
+
+
 
 def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type_vraag) -> None:
     global punten
@@ -148,6 +151,15 @@ def switch_event(event, type_vraag):
 
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
+    if type_vraag.__eq__("multiple"):
+        if counter in range(0, 5):
+            return keuze1
+        elif counter in range(6, 10):
+            return keuze2
+        elif counter in range(11, 15):
+            return keuze3
+        elif counter in range(16, 20):
+            return keuze4
 
 
     elif event == RotaryEncoder.BUTTONUP:
