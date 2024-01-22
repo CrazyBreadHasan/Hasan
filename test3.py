@@ -235,7 +235,7 @@ def led_aan_rood():
 
         time.sleep(0.25)
 
-        GPIO.output(4, GPIO.LOW)
+        GPIO.output(26, GPIO.LOW)
 
         time.sleep(0.25)
 
