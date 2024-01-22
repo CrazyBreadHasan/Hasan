@@ -155,7 +155,7 @@ def switch_event(event, type_vraag):
     global counter, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
-        print(type_vraag)
+
         counter += 1
 
         if type_vraag =="multiple":
