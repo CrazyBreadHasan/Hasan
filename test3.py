@@ -256,11 +256,11 @@ def punten_led():
 
 def led_aan_groen():
     for i in range(5):
-        GPIO.output(17, GPIO.HIGH)
+        GPIO.output(19, GPIO.HIGH)
 
         time.sleep(0.25)
 
-        GPIO.output(17, GPIO.LOW)
+        GPIO.output(19, GPIO.LOW)
 
         time.sleep(0.25)
 
