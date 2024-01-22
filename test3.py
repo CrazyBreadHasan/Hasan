@@ -208,6 +208,8 @@ def switch_event(event, type_vraag):
         elif counter in range(16, 20):
             display.lcd_clear()
             print("False")
+    else:
+        print("llll")
     # if counter in range(1, 5):
     #     display.lcd_clear()
     #     long_string(display, text=keuze1, num_line=2)
