@@ -184,17 +184,17 @@ def switch_event(event, type_vraag):
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
-    elif event == RotaryEncoder.BUTTONDOWN:
-        print("Button pressed")
-    if type_vraag =="multiple":
-        if counter in range(0, 5):
-            return keuze1
-        elif counter in range(6, 10):
-            return keuze2
-        elif counter in range(11, 15):
-            return keuze3
-        elif counter in range(16, 20):
-            return keuze4
+    # elif event == RotaryEncoder.BUTTONDOWN:
+    #     print("Button pressed")
+    # if type_vraag =="multiple":
+    #     if counter in range(0, 5):
+    #         return keuze1
+    #     elif counter in range(6, 10):
+    #         return keuze2
+    #     elif counter in range(11, 15):
+    #         return keuze3
+    #     elif counter in range(16, 20):
+    #         return keuze4
 
 
     elif event == RotaryEncoder.BUTTONUP:
@@ -209,7 +209,7 @@ def long_string(display, text='', num_line=1, num_cols=16):
     if len(text) > num_cols:
 
         display.lcd_display_string(text[:num_cols], num_line)
-        sleep(0.3)
+        sleep(0.1)
         for i in range(len(text) - num_cols + 1):
             text_to_print = text[i:i + num_cols]
             display.lcd_display_string(text_to_print, num_line)
