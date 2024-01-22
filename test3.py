@@ -159,6 +159,7 @@ def switch_event(event, type_vraag):
         counter += 1
 
         if type_vraag =="multiple":
+            print("kkk")
             # display.lcd_clear()
             # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
