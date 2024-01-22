@@ -66,7 +66,7 @@ def pak_gebruiker_keuze() -> int:
         else:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
-def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> str:
+def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
     global counter, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.BUTTONDOWN:
