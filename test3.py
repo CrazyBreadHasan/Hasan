@@ -154,43 +154,10 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
 def switch_event(event, type_vraag):
     global counter, vraag_type, keuze1, keuze2, keuze3, keuze4
+    vraag_type = type_vraag
 
     if event == RotaryEncoder.CLOCKWISE:
-
         counter += 1
-
-        vraag_type = type_vraag
-
-        if vraag_type == "multiple":
-            # display.lcd_clear()
-            # long_string(display, text=str(counter), num_line=2)
-            if counter in range(1, 5):
-                display.lcd_clear()
-                long_string(display, text=keuze1, num_line=2)
-            elif counter in range(6, 10):
-                display.lcd_clear()
-                print("Counter is in the range (6, 10)")
-                long_string(display, text=keuze2, num_line=2)
-            elif counter in range(11, 15):
-                display.lcd_clear()
-                long_string(display, text=keuze3, num_line=2)
-            elif counter in range(16, 20):
-                display.lcd_clear()
-                long_string(display, text=keuze4, num_line=2)
-        elif vraag_type == "boolean":
-            if counter in range(0, 5):
-                display.lcd_clear()
-                long_string(display, "True", 2)
-            elif counter in range(6, 10):
-                display.lcd_clear()
-                long_string(display, "False", 2)
-            elif counter in range(11, 15):
-                display.lcd_clear()
-                print("True")
-            elif counter in range(16, 20):
-                display.lcd_clear()
-                print("False")
-
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
@@ -212,6 +179,35 @@ def switch_event(event, type_vraag):
         return
 
     counter = min(20, max(0, counter))
+    if vraag_type == "multiple":
+        # display.lcd_clear()
+        # long_string(display, text=str(counter), num_line=2)
+        if counter in range(1, 5):
+            display.lcd_clear()
+            long_string(display, text=keuze1, num_line=2)
+        elif counter in range(6, 10):
+            display.lcd_clear()
+            print("Counter is in the range (6, 10)")
+            long_string(display, text=keuze2, num_line=2)
+        elif counter in range(11, 15):
+            display.lcd_clear()
+            long_string(display, text=keuze3, num_line=2)
+        elif counter in range(16, 20):
+            display.lcd_clear()
+            long_string(display, text=keuze4, num_line=2)
+    elif vraag_type == "boolean":
+        if counter in range(0, 5):
+            display.lcd_clear()
+            long_string(display, "True", 2)
+        elif counter in range(6, 10):
+            display.lcd_clear()
+            long_string(display, "False", 2)
+        elif counter in range(11, 15):
+            display.lcd_clear()
+            print("True")
+        elif counter in range(16, 20):
+            display.lcd_clear()
+            print("False")
     # if counter in range(1, 5):
     #     display.lcd_clear()
     #     long_string(display, text=keuze1, num_line=2)
