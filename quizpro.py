@@ -10,7 +10,7 @@ goed = 0
 fout = 0
 GPIO.setmode(GPIO.BCM)
 #zet de pin als output
-GPIO.setup(4, GPIO.OUT)
+GPIO.setup(26, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 
 # vragen ophalen
