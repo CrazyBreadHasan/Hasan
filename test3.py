@@ -46,12 +46,12 @@ def print_keuzes(keuzes: list, type_vraag) -> str:
     for keuze_index, keuze in enumerate(keuzes):
         choices_string += f"{keuze_index + 1}. {html.unescape(keuze)}\n"
 
-    if (type_vraag.__eq__("multiple")):
+    if type_vraag == "multiple":
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
         keuze3 = choices_string.split("\n")[2]
         keuze4 = choices_string.split("\n")[3]
-    elif (type_vraag.__eq__("boolean")):
+    elif type_vraag == "boolean":
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
 
@@ -72,7 +72,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
 
     if event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
-        if type_vraag.__eq__("multiple"):
+        if type_vraag == "multiple":
             if counter in range(0, 5):
                 return 0  # Index for keuze1
             elif counter in range(6, 10):
@@ -157,7 +157,7 @@ def switch_event(event, type_vraag):
         print(type_vraag)
         counter += 1
 
-        if type_vraag.__eq__("multiple"):
+        if type_vraag =="multiple":
             # display.lcd_clear()
             # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
@@ -171,7 +171,7 @@ def switch_event(event, type_vraag):
                 long_string(display, text=keuze3, num_line=2)
             elif counter in range(16, 20):
                 long_string(display, text=keuze4, num_line=2)
-        elif type_vraag.__eq__("boolean"):
+        elif type_vraag =="boolean":
             if counter in range(0, 5):
                 long_string(display, "True", 2)
             elif counter in range(6, 10):
@@ -186,7 +186,7 @@ def switch_event(event, type_vraag):
 
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
-    if type_vraag.__eq__("multiple"):
+    if type_vraag =="multiple":
         if counter in range(0, 5):
             return keuze1
         elif counter in range(6, 10):
