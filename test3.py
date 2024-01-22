@@ -159,7 +159,7 @@ def switch_event(event, type_vraag):
 
         counter += 1
 
-        type_vraag = vraag_type;
+        vraag_type = type_vraag
 
         if vraag_type == "multiple":
             # display.lcd_clear()
