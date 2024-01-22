@@ -25,6 +25,7 @@ global keuze1
 global keuze2
 global keuze3
 global keuze4
+global vraag_type
 
 
 def vragen_ophalen(amount: int, category: int) -> list:
@@ -152,13 +153,15 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
 
 def switch_event(event, type_vraag):
-    global counter, keuze1, keuze2, keuze3, keuze4
+    global counter, vraag_type, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
 
         counter += 1
 
-        if type_vraag =="multiple":
+        type_vraag = vraag_type;
+
+        if vraag_type == "multiple":
             # display.lcd_clear()
             # long_string(display, text=str(counter), num_line=2)
             if counter in range(1, 5):
@@ -174,7 +177,7 @@ def switch_event(event, type_vraag):
             elif counter in range(16, 20):
                 display.lcd_clear()
                 long_string(display, text=keuze4, num_line=2)
-        elif type_vraag =="boolean":
+        elif vraag_type == "boolean":
             if counter in range(0, 5):
                 display.lcd_clear()
                 long_string(display, "True", 2)
@@ -209,20 +212,20 @@ def switch_event(event, type_vraag):
         return
 
     counter = min(20, max(0, counter))
-    if counter in range(1, 5):
-        display.lcd_clear()
-        long_string(display, text=keuze1, num_line=2)
-    elif counter in range(6, 10):
-        display.lcd_clear()
-        long_string(display, text=keuze2, num_line=2)
-    elif counter in range(11, 15):
-        display.lcd_clear()
-        long_string(display, text=keuze3, num_line=2)
-    elif counter in range(16, 20):
-        display.lcd_clear()
-        long_string(display, text=keuze4, num_line=2)
+    # if counter in range(1, 5):
+    #     display.lcd_clear()
+    #     long_string(display, text=keuze1, num_line=2)
+    # elif counter in range(6, 10):
+    #     display.lcd_clear()
+    #     long_string(display, text=keuze2, num_line=2)
+    # elif counter in range(11, 15):
+    #     display.lcd_clear()
+    #     long_string(display, text=keuze3, num_line=2)
+    # elif counter in range(16, 20):
+    #     display.lcd_clear()
+    #     long_string(display, text=keuze4, num_line=2)
     print(counter)
-    print(type_vraag)
+    print(vraag_type)
 
 
 def long_string(display, text='', num_line=1, num_cols=16):
