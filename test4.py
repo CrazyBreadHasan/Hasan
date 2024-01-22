@@ -155,37 +155,7 @@ def switch_event(event, type_vraag):
     global counter, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
-        print(type_vraag)
         counter += 1
-
-        if type_vraag == "multiple":
-            if 1 <= counter <= 5:
-                display.lcd_clear()
-                long_string(display, text=keuze1, num_line=2)
-            elif 6 <= counter <= 10:
-                display.lcd_clear()
-                long_string(display, text=keuze2, num_line=2)
-            elif 11 <= counter <= 15:
-                display.lcd_clear()
-                long_string(display, text=keuze3, num_line=2)
-            elif 16 <= counter <= 20:
-                display.lcd_clear()
-                long_string(display, text=keuze4, num_line=2)
-
-        elif type_vraag == "boolean":
-            if 0 <= counter <= 5:
-                display.lcd_clear()
-                long_string(display, "True", 2)
-            elif 6 <= counter <= 10:
-                display.lcd_clear()
-                long_string(display, "False", 2)
-            elif 11 <= counter <= 15:
-                display.lcd_clear()
-                print("True")
-            elif 16 <= counter <= 20:
-                display.lcd_clear()
-                print("False")
-
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
@@ -196,8 +166,38 @@ def switch_event(event, type_vraag):
         print("Button released")
         return
 
-    counter = min(20, max(0, counter))
+    if type_vraag == "multiple":
+        if 1 <= counter <= 5:
+            display.lcd_clear()
+            long_string(display, text=keuze1, num_line=2)
+        elif 6 <= counter <= 10:
+            display.lcd_clear()
+            long_string(display, text=keuze2, num_line=2)
+        elif 11 <= counter <= 15:
+            display.lcd_clear()
+            long_string(display, text=keuze3, num_line=2)
+        elif 16 <= counter <= 20:
+            display.lcd_clear()
+            long_string(display, text=keuze4, num_line=2)
+    elif type_vraag == "boolean":
+        if 0 <= counter <= 5:
+            display.lcd_clear()
+            long_string(display, "True", 2)
+        elif 6 <= counter <= 10:
+            display.lcd_clear()
+            long_string(display, "False", 2)
+        elif 11 <= counter <= 15:
+            display.lcd_clear()
+            print("True")
+        elif 16 <= counter <= 20:
+            display.lcd_clear()
+            print("False")
+
     print(counter)
+    print(type_vraag)
+
+
+    counter = min(20, max(0, counter))
 
 
 def long_string(display, text='', num_line=1, num_cols=16):
