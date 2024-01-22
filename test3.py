@@ -147,7 +147,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             punten -= 1
 
             punten_led()
-        return juiste_antwoord_tekst, type_vraag
+
 
 
 def switch_event(event, type_vraag):
