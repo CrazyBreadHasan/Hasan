@@ -107,7 +107,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
         event = encoder_instance.getSwitchState(clk)
         switch_event(event, type_vraag)
         # encoder()
-        geb_keuze_index = pak_gebruiker_keuze_rotary()
+        geb_keuze_index = pak_gebruiker_keuze_rotary(encoder_instance, event, type_vraag)
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
 
