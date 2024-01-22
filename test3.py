@@ -13,7 +13,7 @@ clk = 17
 dt = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP) #okok
+GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # okok
 display = drivers.Lcd()
 
 global punten
@@ -27,35 +27,36 @@ global keuze3
 global keuze4
 
 
-
-
 def vragen_ophalen(amount: int, category: int) -> list:
     url = f"https://opentdb.com/api.php?amount={amount}&category={category}"
     response = requests.get(url)
     response_json = response.json()
     return response_json["results"]
 
-def vragen_mixen(keuze: list) ->list:
+
+def vragen_mixen(keuze: list) -> list:
     random.shuffle(keuze)
     return keuze
+
 
 def print_keuzes(keuzes: list, type_vraag) -> str:
     global keuze1, keuze2, keuze3, keuze4
     choices_string = ""
 
     for keuze_index, keuze in enumerate(keuzes):
-        choices_string += f"{keuze_index+1}. {html.unescape(keuze)}\n"
+        choices_string += f"{keuze_index + 1}. {html.unescape(keuze)}\n"
 
     if (type_vraag.__eq__("multiple")):
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
-        keuze3 =choices_string.split("\n")[2]
+        keuze3 = choices_string.split("\n")[2]
         keuze4 = choices_string.split("\n")[3]
-    elif(type_vraag.__eq__("boolean")):
+    elif (type_vraag.__eq__("boolean")):
         keuze1 = choices_string.split("\n")[0]
         keuze2 = choices_string.split("\n")[1]
 
     return choices_string
+
 
 def pak_gebruiker_keuze() -> int:
     while True:
@@ -64,9 +65,6 @@ def pak_gebruiker_keuze() -> int:
             return gebruiker_keuze - 1
         else:
             print("Invalide antwoord, Voer nummer van je keuze in.")
-
-
-
 
 
 def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type_vraag) -> None:
@@ -82,12 +80,9 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
         keuzes.extend([vraag["correct_answer"]])
         mix_vragen = vragen_mixen(keuzes)
 
-
-
-
-        keuze_text= print_keuzes(mix_vragen, type_vraag)
+        keuze_text = print_keuzes(mix_vragen, type_vraag)
         print(keuze_text)
-        long_string(display, text= keuze_text, num_line= 2)
+        long_string(display, text=keuze_text, num_line=2)
 
         event = encoder_instance.getSwitchState(clk)
         switch_event(event, type_vraag)
@@ -96,15 +91,13 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
         juiste_antwoord_tekst = html.unescape(vraag["correct_answer"])
 
-
-
         if geb_keuze_tekst == juiste_antwoord_tekst:
             temp_print(long_string(display, text="Correct", num_line=2))
             # long_string(display, "Juist", 2)
             display.lcd_clear()
 
             led_aan_groen()
-            punten +=1
+            punten += 1
 
 
 
@@ -117,6 +110,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
             punten_led()
         return juiste_antwoord_tekst, type_vraag
+
 
 def switch_event(event, type_vraag):
     global counter, keuze1, keuze2, keuze3, keuze4
@@ -134,11 +128,11 @@ def switch_event(event, type_vraag):
             elif counter in range(6, 10):
                 display.lcd_clear()
                 print("Counter is in the range (6, 10)")
-                long_string(display,text=keuze2,num_line= 2)
+                long_string(display, text=keuze2, num_line=2)
             elif counter in range(11, 15):
-                long_string(display,text=keuze3, num_line= 2)
+                long_string(display, text=keuze3, num_line=2)
             elif counter in range(16, 20):
-                long_string(display,text=keuze4, num_line= 2)
+                long_string(display, text=keuze4, num_line=2)
         elif type_vraag.__eq__("boolean"):
             if counter in range(0, 5):
                 long_string(display, "True", 2)
@@ -163,9 +157,8 @@ def switch_event(event, type_vraag):
     counter = min(20, max(0, counter))
     print(counter)
 
+
 def long_string(display, text='', num_line=1, num_cols=16):
-
-
     if len(text) > num_cols:
 
         display.lcd_display_string(text[:num_cols], num_line)
@@ -178,6 +171,7 @@ def long_string(display, text='', num_line=1, num_cols=16):
     else:
         display.lcd_display_string(text, num_line)
 
+
 def led_aan_rood():
     for i in range(5):
         GPIO.output(4, GPIO.HIGH)
@@ -187,8 +181,11 @@ def led_aan_rood():
         GPIO.output(4, GPIO.LOW)
 
         time.sleep(0.25)
+
+
 def led_aan_rood1():
     GPIO.output(4, GPIO.HIGH)
+
 
 def punten_led():
     global punten
@@ -198,6 +195,8 @@ def punten_led():
     elif punten == -2:
         GPIO.output(4, GPIO.HIGH)
         GPIO.output(17, GPIO.HIGH)
+
+
 def led_aan_groen():
     for i in range(5):
         GPIO.output(17, GPIO.HIGH)
@@ -207,6 +206,7 @@ def led_aan_groen():
         GPIO.output(17, GPIO.LOW)
 
         time.sleep(0.25)
+
 
 def temp_print(val: str):
     print(val)
@@ -224,7 +224,6 @@ if __name__ == '__main__':
         dt = 18
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
 
-
         speel_spel(amount, category, encoder_instance, type_vraag="multiple")
         print(punten)
     except KeyboardInterrupt:
@@ -232,4 +231,4 @@ if __name__ == '__main__':
         GPIO.cleanup()
     finally:
         GPIO.cleanup()
-        display.lcd_clear() #ok
+        display.lcd_clear()  # ok
