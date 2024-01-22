@@ -14,7 +14,7 @@ dt = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(21, GPIO.OUT)# okok
+GPIO.setup(26, GPIO.OUT)# okok
 display = drivers.Lcd()
 
 global punten
@@ -231,7 +231,7 @@ def long_string(display, text='', num_line=1, num_cols=16):
 
 def led_aan_rood():
     for i in range(5):
-        GPIO.output(21, GPIO.HIGH)
+        GPIO.output(26, GPIO.HIGH)
 
         time.sleep(0.25)
 
