@@ -66,6 +66,7 @@ def pak_gebruiker_keuze() -> int:
         else:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
+
 def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
     global counter, keuze1, keuze2, keuze3, keuze4
 
@@ -73,13 +74,29 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
         print("Button pressed")
         if type_vraag.__eq__("multiple"):
             if counter in range(0, 5):
-                return keuze1
+                return 0  # Index for keuze1
             elif counter in range(6, 10):
-                return keuze2
+                return 1  # Index for keuze2
             elif counter in range(11, 15):
-                return keuze3
+                return 2  # Index for keuze3
             elif counter in range(16, 20):
-                return keuze4
+                return 3  # Index for keuze4
+    # Return a default index (0) if event is not BUTTONDOWN
+    return 0
+# def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
+#     global counter, keuze1, keuze2, keuze3, keuze4
+#
+#     if event == RotaryEncoder.BUTTONDOWN:
+#         print("Button pressed")
+#         if type_vraag.__eq__("multiple"):
+#             if counter in range(0, 5):
+#                 return keuze1
+#             elif counter in range(6, 10):
+#                 return keuze2
+#             elif counter in range(11, 15):
+#                 return keuze3
+#             elif counter in range(16, 20):
+#                 return keuze4
 
 
 
