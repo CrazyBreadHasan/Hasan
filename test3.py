@@ -124,6 +124,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
         event = encoder_instance.getSwitchState(clk)
         switch_event(event, type_vraag)
+        pak_gebruiker_keuze_rotary(encoder_instance, event, type_vraag)
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze_rotary(encoder_instance, event, type_vraag)
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
@@ -184,17 +185,17 @@ def switch_event(event, type_vraag):
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
-    # elif event == RotaryEncoder.BUTTONDOWN:
-    #     print("Button pressed")
-    # if type_vraag =="multiple":
-    #     if counter in range(0, 5):
-    #         return keuze1
-    #     elif counter in range(6, 10):
-    #         return keuze2
-    #     elif counter in range(11, 15):
-    #         return keuze3
-    #     elif counter in range(16, 20):
-    #         return keuze4
+    elif event == RotaryEncoder.BUTTONDOWN:
+        print("Button pressed")
+    if type_vraag =="multiple":
+        if counter in range(0, 5):
+            return keuze1
+        elif counter in range(6, 10):
+            return keuze2
+        elif counter in range(11, 15):
+            return keuze3
+        elif counter in range(16, 20):
+            return keuze4
 
 
     elif event == RotaryEncoder.BUTTONUP:
