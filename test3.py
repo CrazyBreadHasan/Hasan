@@ -66,7 +66,7 @@ def pak_gebruiker_keuze() -> int:
         else:
             print("Invalide antwoord, Voer nummer van je keuze in.")
 
-def pak_gebruiker_keuze_rotary():
+
 
 
 
