@@ -124,7 +124,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
         event = encoder_instance.getSwitchState(clk)
         switch_event(event, type_vraag)
-        pak_gebruiker_keuze_rotary(encoder_instance, event, type_vraag)
+
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze_rotary(encoder_instance, event, type_vraag)
         geb_keuze_tekst = mix_vragen[geb_keuze_index]
@@ -169,17 +169,23 @@ def switch_event(event, type_vraag):
                 print("Counter is in the range (6, 10)")
                 long_string(display, text=keuze2, num_line=2)
             elif counter in range(11, 15):
+                display.lcd_clear()
                 long_string(display, text=keuze3, num_line=2)
             elif counter in range(16, 20):
+                display.lcd_clear()
                 long_string(display, text=keuze4, num_line=2)
         elif type_vraag =="boolean":
             if counter in range(0, 5):
+                display.lcd_clear()
                 long_string(display, "True", 2)
             elif counter in range(6, 10):
+                display.lcd_clear()
                 long_string(display, "False", 2)
             elif counter in range(11, 15):
+                display.lcd_clear()
                 print("True")
             elif counter in range(16, 20):
+                display.lcd_clear()
                 print("False")
 
     elif event == RotaryEncoder.ANTICLOCKWISE:
