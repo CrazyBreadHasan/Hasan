@@ -22,11 +22,11 @@ def vragen_ophalen(amount: int, category: int) -> list:
 
 def led_aan_rood():
     for i in range(5):
-        GPIO.output(4, GPIO.HIGH)
+        GPIO.output(26, GPIO.HIGH)
 
         time.sleep(0.25)
 
-        GPIO.output(4, GPIO.LOW)
+        GPIO.output(26, GPIO.LOW)
 
         time.sleep(0.25)
 def led_aan_rood1():
@@ -42,11 +42,11 @@ def punten_led():
         GPIO.output(17, GPIO.HIGH)
 def led_aan_groen():
     for i in range(5):
-        GPIO.output(17, GPIO.HIGH)
+        GPIO.output(19, GPIO.HIGH)
 
         time.sleep(0.25)
 
-        GPIO.output(17, GPIO.LOW)
+        GPIO.output(19, GPIO.LOW)
 
         time.sleep(0.25)
 
