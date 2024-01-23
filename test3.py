@@ -86,7 +86,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
                 return 3  # Index for keuze4
 
     # Return a default index (0) if event is not BUTTONDOWN
-
+    time.sleep(10)
     return 0
 
 # def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
