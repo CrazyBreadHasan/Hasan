@@ -13,7 +13,9 @@ clk = 17
 dt = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # okok
+GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(19, GPIO.OUT)
+GPIO.setup(26, GPIO.OUT)# okok
 display = drivers.Lcd()
 
 global punten
@@ -25,6 +27,7 @@ global keuze1
 global keuze2
 global keuze3
 global keuze4
+global vraag_type
 
 
 def vragen_ophalen(amount: int, category: int) -> list:
@@ -81,9 +84,12 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
                 return 2  # Index for keuze3
             elif counter in range(16, 20):
                 return 3  # Index for keuze4
+
+
     # Return a default index (0) if event is not BUTTONDOWN
     time.sleep(10)
     return 0
+
 # def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
 #     global counter, keuze1, keuze2, keuze3, keuze4
 #
@@ -108,6 +114,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
 def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type_vraag) -> None:
     global punten
     global counter
+    global vraag_type
     ophalen = vragen_ophalen(amount, catogory)
 
     for vraag in ophalen:
@@ -124,6 +131,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
         event = encoder_instance.getSwitchState(clk)
         switch_event(event, type_vraag)
+        vraag_type = type_vraag
 
         # encoder()
         geb_keuze_index = pak_gebruiker_keuze_rotary(encoder_instance, event, type_vraag)
@@ -148,11 +156,11 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             punten -= 1
 
             punten_led()
-        return juiste_antwoord_tekst, type_vraag
+    return juiste_antwoord_tekst, type_vraag
 
 
 def switch_event(event, type_vraag):
-    global counter, keuze1, keuze2, keuze3, keuze4
+    global counter, vraag_type, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
         counter += 1
@@ -161,43 +169,54 @@ def switch_event(event, type_vraag):
 
     elif event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
+    if type_vraag =="multiple":
+        if counter in range(0, 5):
+            return keuze1
+        elif counter in range(6, 10):
+            return keuze2
+        elif counter in range(11, 15):
+            return keuze3
+        elif counter in range(16, 20):
+            return keuze4
+
 
     elif event == RotaryEncoder.BUTTONUP:
         print("Button released")
         return
 
-    if type_vraag == "multiple":
-        if 1 <= counter <= 5:
+    counter = min(20, max(0, counter))
+    if vraag_type == "multiple":
+        display.lcd_clear()
+        if counter in range(1, 5):
             display.lcd_clear()
             long_string(display, text=keuze1, num_line=2)
-        elif 6 <= counter <= 10:
+        elif counter in range(6, 10):
             display.lcd_clear()
+            print("Counter is in the range (6, 10)")
             long_string(display, text=keuze2, num_line=2)
-        elif 11 <= counter <= 15:
+        elif counter in range(11, 15):
             display.lcd_clear()
             long_string(display, text=keuze3, num_line=2)
-        elif 16 <= counter <= 20:
+        elif counter in range(16, 20):
             display.lcd_clear()
             long_string(display, text=keuze4, num_line=2)
-    elif type_vraag == "boolean":
-        if 0 <= counter <= 5:
+    elif vraag_type == "boolean":
+        display.lcd_clear()
+        if counter in range(0, 5):
             display.lcd_clear()
             long_string(display, "True", 2)
-        elif 6 <= counter <= 10:
+        elif counter in range(6, 10):
             display.lcd_clear()
             long_string(display, "False", 2)
-        elif 11 <= counter <= 15:
+        elif counter in range(11, 15):
             display.lcd_clear()
             print("True")
-        elif 16 <= counter <= 20:
+        elif counter in range(16, 20):
             display.lcd_clear()
             print("False")
 
     print(counter)
-    print(type_vraag)
-
-
-    counter = min(20, max(0, counter))
+    print(vraag_type)
 
 
 def long_string(display, text='', num_line=1, num_cols=16):
@@ -216,11 +235,11 @@ def long_string(display, text='', num_line=1, num_cols=16):
 
 def led_aan_rood():
     for i in range(5):
-        GPIO.output(4, GPIO.HIGH)
+        GPIO.output(26, GPIO.HIGH)
 
         time.sleep(0.25)
 
-        GPIO.output(4, GPIO.LOW)
+        GPIO.output(26, GPIO.LOW)
 
         time.sleep(0.25)
 
@@ -233,19 +252,19 @@ def punten_led():
     global punten
 
     if punten == -1:
-        GPIO.output(4, GPIO.HIGH)
+        GPIO.output(26, GPIO.HIGH)
     elif punten == -2:
-        GPIO.output(4, GPIO.HIGH)
-        GPIO.output(17, GPIO.HIGH)
+        GPIO.output(26, GPIO.HIGH)
+        # GPIO.output(17, GPIO.HIGH)
 
 
 def led_aan_groen():
     for i in range(5):
-        GPIO.output(17, GPIO.HIGH)
+        GPIO.output(19, GPIO.HIGH)
 
         time.sleep(0.25)
 
-        GPIO.output(17, GPIO.LOW)
+        GPIO.output(19, GPIO.LOW)
 
         time.sleep(0.25)
 
