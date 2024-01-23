@@ -130,7 +130,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
         long_string(display, text=keuze_text, num_line=2)
 
         event = encoder_instance.getSwitchState(clk)
-        switch_event(event, type_vraag)
+        switch_event(event, type_vraag, vraag_type)
         pak_gebruiker_keuze_rotary(encoder_instance ,event,type_vraag)
         vraag_type = type_vraag
 
