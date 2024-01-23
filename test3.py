@@ -14,6 +14,7 @@ dt = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(19, GPIO.OUT)
 GPIO.setup(26, GPIO.OUT)# okok
 display = drivers.Lcd()
 
