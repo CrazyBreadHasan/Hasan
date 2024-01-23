@@ -215,7 +215,7 @@ def switch_event(event, type_vraag):
             print("False")
 
     print(counter)
-    print(vraag_type)
+
 
 
 def long_string(display, text='', num_line=1, num_cols=16):
