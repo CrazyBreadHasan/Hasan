@@ -184,7 +184,7 @@ def switch_event(event, type_vraag):
         return
 
     counter = min(20, max(0, counter))
-    if vraag_type == "multiple":
+    if type_vraag == "multiple":
         display.lcd_clear()
         if counter in range(1, 5):
             display.lcd_clear()
