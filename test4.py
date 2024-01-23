@@ -160,8 +160,8 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
     return juiste_antwoord_tekst, type_vraag
 
 
-def switch_event(event, type_vraag):
-    global counter, vraag_type, keuze1, keuze2, keuze3, keuze4
+def switch_event(event, type_vraag, vraag_type):
+    global counter, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
         counter += 1
