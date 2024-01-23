@@ -73,7 +73,7 @@ def pak_gebruiker_keuze() -> int:
 def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
     global counter, keuze1, keuze2, keuze3, keuze4
 
-    if event == RotaryEncoder.BUTTONUP:
+    if event == RotaryEncoder.BUTTONDOWN:
         print("Button pressed")
         if type_vraag == "multiple":
             if counter in range(0, 5):
@@ -130,8 +130,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
         long_string(display, text=keuze_text, num_line=2)
 
         event = encoder_instance.getSwitchState(clk)
-        switch_event(event, type_vraag, vraag_type)
-        pak_gebruiker_keuze_rotary(encoder_instance ,event,type_vraag)
+        switch_event(event, type_vraag)
         vraag_type = type_vraag
 
         # encoder()
@@ -160,18 +159,30 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
     return juiste_antwoord_tekst, type_vraag
 
 
-def switch_event(event, type_vraag, vraag_type):
-    global counter, keuze1, keuze2, keuze3, keuze4
+def switch_event(event, type_vraag):
+    global counter, vraag_type, keuze1, keuze2, keuze3, keuze4
 
     if event == RotaryEncoder.CLOCKWISE:
         counter += 1
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
+    elif event == RotaryEncoder.BUTTONDOWN:
+        print("Button pressed")
+    if type_vraag =="multiple":
+        if counter in range(0, 5):
+            return keuze1
+        elif counter in range(6, 10):
+            return keuze2
+        elif counter in range(11, 15):
+            return keuze3
+        elif counter in range(16, 20):
+            return keuze4
 
 
-
-
+    elif event == RotaryEncoder.BUTTONUP:
+        print("Button released")
+        return
 
     counter = min(20, max(0, counter))
     if vraag_type == "multiple":
