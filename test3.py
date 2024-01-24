@@ -74,10 +74,12 @@ def pak_gebruiker_keuze() -> int:
 
 def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
     global counter, keuze1, keuze2, keuze3, keuze4
-    while event != RotaryEncoder.BUTTONDOWN:
+    button_pressed = False
+    while event != RotaryEncoder.BUTTONDOWN or button_pressed == False:
 
 
         if event == RotaryEncoder.BUTTONDOWN:
+            button_pressed = True
             print("Button pressed")
             if type_vraag == "multiple":
                 if counter in range(0, 5):
