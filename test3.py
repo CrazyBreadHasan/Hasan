@@ -14,8 +14,12 @@ dt = 18
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(clk, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 GPIO.setup(dt, GPIO.IN, pull_up_down=GPIO.PUD_UP)
-GPIO.setup(19, GPIO.OUT)
+GPIO.setup(21, GPIO.OUT)
+GPIO.setup(20, GPIO.OUT)
+GPIO.setup(16, GPIO.OUT)
 GPIO.setup(26, GPIO.OUT)
+GPIO.setup(19, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)# okok
 display = drivers.Lcd()
 
@@ -119,7 +123,8 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
 
 
 def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type_vraag) -> None:
-    global punten
+    global goed
+    global fout
     global counter
     global vraag_type
     ophalen = vragen_ophalen(amount, catogory)
@@ -151,8 +156,8 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             # long_string(display, "Juist", 2)
             display.lcd_clear()
 
-            led_aan_groen()
-            punten += 1
+
+            goed +=1
 
 
 
@@ -161,9 +166,9 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             # long_string(display, "Incorrect", 2)
             display.lcd_clear()
             led_aan_rood()
-            punten -= 1
+            fout += 1
 
-            punten_led()
+        punten_led()
     return juiste_antwoord_tekst, type_vraag
 
 
@@ -255,13 +260,21 @@ def led_aan_rood1():
 
 
 def punten_led():
-    global punten
+    global goed, fout
 
-    if punten == -1:
+    if goed  == 1:
         GPIO.output(26, GPIO.HIGH)
-    elif punten == -2:
-        GPIO.output(26, GPIO.HIGH)
-        # GPIO.output(17, GPIO.HIGH)
+    elif goed == 2:
+        GPIO.output(13, GPIO.HIGH)
+    elif goed == 3:
+        GPIO.output(19, GPIO.HIGH)
+    if fout  == 1:
+        GPIO.output(16, GPIO.HIGH)
+    elif fout == 2:
+        GPIO.output(20, GPIO.HIGH)
+    elif fout == 3:
+        GPIO.output(21, GPIO.HIGH)
+
 
 
 def led_aan_groen():
