@@ -11,3 +11,5 @@ from roatary import RotaryEncoder
 def pak_gebruiker_keuze(event):
     if event == RotaryEncoder.BUTTONDOWN:
         print("Button")
+
+pak_gebruiker_keuze()
