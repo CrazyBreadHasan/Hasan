@@ -305,7 +305,8 @@ if __name__ == '__main__':
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
 
         speel_spel(amount, category, encoder_instance, type_vraag="multiple")
-        print(punten)
+        print(goed)
+        print(fout)
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
         GPIO.cleanup()
