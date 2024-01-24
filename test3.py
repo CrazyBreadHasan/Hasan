@@ -173,17 +173,17 @@ def switch_event(event, type_vraag):
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
-    elif event == RotaryEncoder.BUTTONDOWN:
-        print("Button pressed")
-    if type_vraag =="multiple":
-        if counter in range(0, 5):
-            return keuze1
-        elif counter in range(6, 10):
-            return keuze2
-        elif counter in range(11, 15):
-            return keuze3
-        elif counter in range(16, 20):
-            return keuze4
+    # elif event == RotaryEncoder.BUTTONDOWN:
+    #     print("Button pressed")
+    # if type_vraag =="multiple":
+    #     if counter in range(0, 5):
+    #         return keuze1
+    #     elif counter in range(6, 10):
+    #         return keuze2
+    #     elif counter in range(11, 15):
+    #         return keuze3
+    #     elif counter in range(16, 20):
+    #         return keuze4
 
 
     elif event == RotaryEncoder.BUTTONUP:
