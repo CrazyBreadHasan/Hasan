@@ -81,7 +81,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
         # print(encoder_instance.getSwitchState(clk))
         if GPIO.input(4) == GPIO.LOW:
             button_pressed = True
-            if type_vraag == "multiple":
+            # if type_vraag == "multiple":
             if counter in range(0, 5):
                 return 0  # Index for keuze1
             elif counter in range(6, 10):
