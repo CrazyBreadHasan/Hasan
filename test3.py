@@ -75,8 +75,8 @@ def pak_gebruiker_keuze() -> int:
 def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
     global counter, keuze1, keuze2, keuze3, keuze4
     button_pressed = False
+    print("Please fill in your answer: ")
     while button_pressed == False:
-
         if event == RotaryEncoder.BUTTONDOWN:
             button_pressed = True
             print("Button pressed")
@@ -92,6 +92,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
             elif counter in range(16, 20):
                 return 3  # Index for keuze4
 
+    print("Too late")
     # Return a default index (0) if event is not BUTTONDOWN
 
 
