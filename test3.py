@@ -80,7 +80,6 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
     while button_pressed == False:
         # print(encoder_instance.getSwitchState(clk))
         if GPIO.input(4) == GPIO.HIGH:
-            button_pressed = True
             print(GPIO.input(4))
             # if type_vraag == "multiple":
             # if counter in range(0, 5):
