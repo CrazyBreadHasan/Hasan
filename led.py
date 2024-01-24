@@ -9,6 +9,7 @@ GPIO.setup(20, GPIO.OUT)
 GPIO.setup(16, GPIO.OUT)
 GPIO.setup(26, GPIO.OUT)
 GPIO.setup(19, GPIO.OUT)
+GPIO.setup(13, GPIO.OUT)
 # loop through 5 times
 for i in range(5):
     GPIO.output(21, GPIO.HIGH)
@@ -16,6 +17,7 @@ for i in range(5):
     GPIO.output(16, GPIO.HIGH)
     GPIO.output(26, GPIO.HIGH)
     GPIO.output(19, GPIO.HIGH)
+    GPIO.output(13, GPIO.HIGH)
     print("Led is on!")
     time.sleep(0.25)
 
@@ -24,6 +26,7 @@ for i in range(5):
     GPIO.output(16, GPIO.LOW)
     GPIO.output(26, GPIO.LOW)
     GPIO.output(19, GPIO.LOW)
+    GPIO.output(13, GPIO.LOW)
     print("Led if off")
     time.sleep(0.25)
 
