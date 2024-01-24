@@ -4,14 +4,14 @@ import time
 #gebruik BCM mode voor de pin nummering (conform breakout)
 GPIO.setmode(GPIO.BCM)
 #zet de pin als output
-GPIO.setup(4, GPIO.OUT)
+GPIO.setup(21, GPIO.OUT)
 # loop through 5 times
 for i in range(5):
-    GPIO.output(4, GPIO.HIGH)
+    GPIO.output(21, GPIO.HIGH)
     print("Led is on!")
     time.sleep(0.25)
 
-    GPIO.output(4, GPIO.LOW)
+    GPIO.output(21, GPIO.LOW)
     print("Led if off")
     time.sleep(0.25)
 
