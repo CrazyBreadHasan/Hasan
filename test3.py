@@ -77,8 +77,8 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
     button_pressed = False
     print("Please fill in your answer: ")
     while button_pressed == False:
-        print(encoder_instance.BUTTONDOWN)
-        if event == RotaryEncoder.BUTTONDOWN:
+        print(encoder_instance.getSwitchState(encoder_instance))
+        if encoder_instance.getSwitchState(encoder_instance) == RotaryEncoder.BUTTONDOWN:
             button_pressed = True
             print("Button pressed")
             print(counter + " - counter")
