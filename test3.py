@@ -75,8 +75,7 @@ def pak_gebruiker_keuze() -> int:
 def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraag) -> int:
     global counter, keuze1, keuze2, keuze3, keuze4
     button_pressed = False
-    while event != RotaryEncoder.BUTTONDOWN or button_pressed == False:
-
+    while button_pressed == False:
 
         if event == RotaryEncoder.BUTTONDOWN:
             button_pressed = True
