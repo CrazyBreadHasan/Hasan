@@ -126,7 +126,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
 
         keuze_text = print_keuzes(mix_vragen, type_vraag)
         print(keuze_text)
-        long_string(display, text=keuze_text, num_line=2)
+        # long_string(display, text=keuze_text, num_line=2)
 
         event = encoder_instance.getSwitchState(clk)
         switch_event(event, type_vraag)
