@@ -80,6 +80,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
         if event == RotaryEncoder.BUTTONDOWN:
             button_pressed = True
             print("Button pressed")
+            print(counter + " - counter")
             # if type_vraag == "multiple":
             if counter in range(0, 5):
                 return 0  # Index for keuze1
@@ -173,8 +174,7 @@ def switch_event(event, type_vraag):
     elif event == RotaryEncoder.ANTICLOCKWISE:
         counter -= 1
 
-    elif event == RotaryEncoder.BUTTONDOWN:
-        print("Button pressed")
+
     if type_vraag =="multiple":
         if counter in range(0, 5):
             return keuze1
@@ -187,7 +187,6 @@ def switch_event(event, type_vraag):
 
 
     elif event == RotaryEncoder.BUTTONUP:
-        print("Button released")
         return
 
     counter = min(20, max(0, counter))
