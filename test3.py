@@ -79,7 +79,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
     print("Please fill in your answer: ")
     while button_pressed == False:
         # print(encoder_instance.getSwitchState(clk))
-        if event == RotaryEncoder.BUTTONDOWN:
+        if GPIO.input(4) == True:
             button_pressed = True
             print("Button pressed")
             print(counter + " - counter")
@@ -189,8 +189,8 @@ def switch_event(event, type_vraag):
             return keuze4
 
 
-    elif event == RotaryEncoder.BUTTONUP:
-        return
+    # elif event == RotaryEncoder.BUTTONUP:
+    #     return
 
     counter = min(20, max(0, counter))
     if vraag_type == "multiple":
