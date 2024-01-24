@@ -12,4 +12,4 @@ def pak_gebruiker_keuze(event):
     if event == RotaryEncoder.BUTTONDOWN:
         print("Button")
 
-pak_gebruiker_keuze(event=RotaryEncoder.BUTTONDOWN)
+pak_gebruiker_keuze(event)
