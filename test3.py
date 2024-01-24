@@ -80,15 +80,16 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
         if event == RotaryEncoder.BUTTONDOWN:
             button_pressed = True
             print("Button pressed")
-            if type_vraag == "multiple":
-                if counter in range(0, 5):
-                    return 0  # Index for keuze1
-                elif counter in range(6, 10):
-                    return 1  # Index for keuze2
-                elif counter in range(11, 15):
-                    return 2  # Index for keuze3
-                elif counter in range(16, 20):
-                    return 3  # Index for keuze4
+            # if type_vraag == "multiple":
+            if counter in range(0, 5):
+                return 0  # Index for keuze1
+            elif counter in range(6, 10):
+                print("Answer 2")
+                return 1  # Index for keuze2
+            elif counter in range(11, 15):
+                return 2  # Index for keuze3
+            elif counter in range(16, 20):
+                return 3  # Index for keuze4
 
     # Return a default index (0) if event is not BUTTONDOWN
 
