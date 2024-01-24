@@ -128,6 +128,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
     global counter
     global vraag_type
     ophalen = vragen_ophalen(amount, catogory)
+    led_uit()
 
     for vraag in ophalen:
         type_vraag = vraag["type"]
@@ -294,6 +295,7 @@ if __name__ == '__main__':
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
 
         speel_spel(amount, category, encoder_instance, type_vraag="multiple")
+
         print(goed)
         print(fout)
         led_uit()
