@@ -31,7 +31,9 @@ global vraag_type
 
 
 def vragen_ophalen(amount: int, category: int) -> list:
-    url = f"https://opentdb.com/api.php?amount={amount}&category={category}"
+    # url = f"https://opentdb.com/api.php?amount={amount}&category={category}"
+    url = f"https://opentdb.com/api.php?amount={amount}&category={category}&type=multiple"
+
     response = requests.get(url)
     response_json = response.json()
     return response_json["results"]
