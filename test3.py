@@ -244,19 +244,9 @@ def long_string(display, text='', num_line=1, num_cols=16):
         display.lcd_display_string(text, num_line)
 
 
-def led_aan_rood():
-    for i in range(5):
-        GPIO.output(26, GPIO.HIGH)
-
-        time.sleep(0.25)
-
-        GPIO.output(26, GPIO.LOW)
-
-        time.sleep(0.25)
 
 
-def led_aan_rood1():
-    GPIO.output(4, GPIO.HIGH)
+
 
 
 def punten_led():
@@ -274,18 +264,17 @@ def punten_led():
         GPIO.output(20, GPIO.HIGH)
     elif fout == 3:
         GPIO.output(21, GPIO.HIGH)
+def led_uit():
+    GPIO.output(16, GPIO.LOW)
+    GPIO.output(26, GPIO.LOW)
+    GPIO.output(13, GPIO.LOW)
+    GPIO.output(19, GPIO.LOW)
+    GPIO.output(20, GPIO.LOW)
+    GPIO.output(21, GPIO.LOW)
 
 
 
-def led_aan_groen():
-    for i in range(5):
-        GPIO.output(19, GPIO.HIGH)
 
-        time.sleep(0.25)
-
-        GPIO.output(19, GPIO.LOW)
-
-        time.sleep(0.25)
 
 
 def temp_print(val: str):
@@ -307,6 +296,7 @@ if __name__ == '__main__':
         speel_spel(amount, category, encoder_instance, type_vraag="multiple")
         print(goed)
         print(fout)
+        led_uit()
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
         GPIO.cleanup()
