@@ -166,7 +166,7 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             temp_print(long_string(display, "incorrect", 2))
             # long_string(display, "Incorrect", 2)
             display.lcd_clear()
-            led_aan_rood()
+
             fout += 1
 
         punten_led()
