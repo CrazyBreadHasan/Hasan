@@ -298,6 +298,7 @@ if __name__ == '__main__':
 
         print(goed)
         print(fout)
+        time.sleep(10)
         led_uit()
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
