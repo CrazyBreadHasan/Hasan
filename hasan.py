@@ -301,15 +301,14 @@ if __name__ == '__main__':
         clk = 17
         dt = 18
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
-        if GPIO.input(5) == GPIO.LOW:
 
-            speel_spel(amount, category, encoder_instance, type_vraag="multiple")
-        elif GPIO.input(12) == GPIO.LOW:
-            GPIO.cleanup()
-            os.system("sudo shutdown -h now")
 
-            print(goed)
-            print(fout)
+        speel_spel(amount, category, encoder_instance, type_vraag="multiple")
+
+
+
+        print(goed)
+        print(fout)
         time.sleep(10)
         uitstlag()
         led_uit()
