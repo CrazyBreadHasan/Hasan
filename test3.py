@@ -21,6 +21,7 @@ GPIO.setup(26, GPIO.OUT)
 GPIO.setup(19, GPIO.OUT)
 GPIO.setup(13, GPIO.OUT)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)# okok
+GPIO.setup(5, GPIO.IN)
 display = drivers.Lcd()
 
 global punten
@@ -293,13 +294,21 @@ if __name__ == '__main__':
         clk = 17
         dt = 18
         encoder_instance = RotaryEncoder(17, 18, 4, switch_event)
+        if GPIO.input(5) == GPIO.LOW:
 
-        speel_spel(amount, category, encoder_instance, type_vraag="multiple")
+            speel_spel(amount, category, encoder_instance, type_vraag="multiple")
+        elif GPIO.input(12) == GPIO.LOW:
+            GPIO.cleanup()
+            os.system("sudo shutdown -h now")
 
-        print(goed)
-        print(fout)
+            print(goed)
+            print(fout)
         time.sleep(10)
         led_uit()
+
+
+
+
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
         GPIO.cleanup()
