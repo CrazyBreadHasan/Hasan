@@ -267,6 +267,12 @@ def punten_led():
         GPIO.output(20, GPIO.HIGH)
     elif fout == 3:
         GPIO.output(21, GPIO.HIGH)
+def uitstlag():
+    global goed, fout
+    if goed == 3:
+        long_string(display, text="De deur gaat open, De code is 7", num_line=1)
+    elif fout ==3:
+        long_string(display, text="De deur is voor altijd opslot", num_line=2)
 def led_uit():
     GPIO.output(16, GPIO.LOW)
     GPIO.output(26, GPIO.LOW)
@@ -290,7 +296,7 @@ if __name__ == '__main__':
 
     try:
         # encoder()
-        amount = 3
+        amount = 5
         category = 18
         clk = 17
         dt = 18
@@ -305,6 +311,7 @@ if __name__ == '__main__':
             print(goed)
             print(fout)
         time.sleep(10)
+        uitstlag()
         led_uit()
 
 
