@@ -22,6 +22,7 @@ GPIO.setup(19, GPIO.OUT)
 GPIO.setup(13, GPIO.OUT)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)# okok
 GPIO.setup(5, GPIO.IN)
+GPIO.setup(12, GPIO)
 display = drivers.Lcd()
 
 global punten
