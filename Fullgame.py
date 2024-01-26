@@ -287,7 +287,7 @@ if __name__ == '__main__':
 
     try:
         # encoder()
-        json_file_path = "/home/pi/Hasan/vragen.json"
+        json_file_path = "/home/pi/Hasan/vragen.json" #
         vragen = vragen_ophalen(json_file_path)
         amount = 5
         category = 18
