@@ -96,7 +96,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
             elif counter in range(11, 15):
                 return 2  # Index for keuze3
             elif counter in range(16, 20):
-                return 3  # Index for keuze4
+                return 3  # Index for keuze4 #ok
 
 
 
