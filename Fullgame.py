@@ -127,7 +127,7 @@ def speel_spel(vragen: list, encoder_instance: RotaryEncoder, type_vraag) -> Non
     led_uit()
     shuffle(vragen)
 
-    for vraag in vragen[:3]:
+    for vraag in vragen[:5]:
         type_vraag = vraag["type"]
         vraag_text = html.unescape(vraag["question"])
         long_string(display, vraag_text, 1)
