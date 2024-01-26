@@ -166,9 +166,7 @@ def speel_spel(vragen: list, encoder_instance: RotaryEncoder, type_vraag) -> Non
             fout += 1
 
         punten_led()
-    if goed == 3 or fout == 3:
-        uitstlag()
-        return False
+
 
     return juiste_antwoord_tekst, type_vraag
 
@@ -262,9 +260,9 @@ def punten_led():
 
 def uitstlag():
     global goed, fout
-    if goed == 3:
+    if goed >= 3:
         long_string(display, text="De deur gaat open, De code is 7", num_line=1)
-    elif fout == 3:
+    elif fout >= 3:
         long_string(display, text="De deur is voor altijd opslot", num_line=2)
 
 
@@ -299,7 +297,7 @@ if __name__ == '__main__':
 
         print(goed)
         print(fout)
-        time.sleep(10)
+        time.sleep(5)
         uitstlag()
         led_uit()
 
