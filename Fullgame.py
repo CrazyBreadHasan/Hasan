@@ -166,10 +166,9 @@ def speel_spel(vragen: list, encoder_instance: RotaryEncoder, type_vraag) -> Non
             fout += 1
 
         punten_led()
-    if goed == 3:
+    if goed == 3 or fout == 3:
         uitstlag()
-    elif fout == 3:
-        uitstlag()
+        return False
 
     return juiste_antwoord_tekst, type_vraag
 
