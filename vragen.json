@@ -1,0 +1,605 @@
+{
+    "response_code": 0,
+    "results": [
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "The Ottoman Empire was dissolved after their loss in which war?",
+            "correct_answer": "World War I",
+            "incorrect_answers": [
+                "Crimean War",
+                "Serbian Revolution",
+                "Second Balkan War"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "Which of the following Physicists aided Nazi Germany in their production of a nuclear weapon?",
+            "correct_answer": "Werner Heisenberg",
+            "incorrect_answers": [
+                "John von Neumann",
+                "Albert Einstein",
+                "Max Planck"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "Pianist Fr&eacute;d&eacute;ric Chopin was a composer of which musical era?",
+            "correct_answer": "Romantic",
+            "incorrect_answers": [
+                "Classic",
+                "Baroque",
+                "Renaissance"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "How many years did the Hundred Years&#039; War last?",
+            "correct_answer": "116",
+            "incorrect_answers": [
+                "100",
+                "90",
+                "101"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": " What Russian automatic gas-operated assault rifle was developed in the Soviet Union in 1947, and is still popularly used today?",
+            "correct_answer": "AK-47",
+            "incorrect_answers": [
+                "RPK",
+                "M16",
+                "MG 42"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "What country joined the EU in 2013?",
+            "correct_answer": "Croatia",
+            "incorrect_answers": [
+                "Bulgaria",
+                "Slovenia",
+                "Turkey"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "What was the unofficial name for Germany between 1919 and 1933?",
+            "correct_answer": "Weimar Republic",
+            "incorrect_answers": [
+                "German Democratic Republic",
+                "Federal Republic of Germany",
+                "Oesterreich "
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "What year did World War I begin?",
+            "correct_answer": "1914",
+            "incorrect_answers": [
+                "1905",
+                "1919",
+                "1925"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "When did Jamaica recieve its independence from England? ",
+            "correct_answer": "1962",
+            "incorrect_answers": [
+                "1492",
+                "1963",
+                "1987"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "The main objective of the German operation &quot;Case Blue&quot; during World War II was originally to capture what?",
+            "correct_answer": "Caucasus",
+            "incorrect_answers": [
+                "Stalingrad",
+                "Crimea",
+                "Voronezh"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "When was the Grand Patriotic War in the USSR concluded?",
+            "correct_answer": "May 9th, 1945",
+            "incorrect_answers": [
+                "September 2nd, 1945",
+                "August 9th, 1945",
+                "December 11th, 1945"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "What was Napoleon Bonaparte&#039;s name before he changed it?",
+            "correct_answer": "Napoleone di Buonaparte",
+            "incorrect_answers": [
+                "Naapolion van Bonijpaart",
+                "Napole&atilde;o do Boaparte",
+                "Napoleona de Buenoparte"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "The Bohemian Revolt (1618-1620) started after Protestants in Prague did what to their Catholic Lords Regents?",
+            "correct_answer": "Threw them out of a window",
+            "incorrect_answers": [
+                "Insulted their mothers",
+                "Locked them in stockades",
+                "Hung them."
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "What age was King Henry V when he died?",
+            "correct_answer": "35",
+            "incorrect_answers": [
+                "62",
+                "87",
+                "73"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "Which one of these tanks was designed and operated by the United Kingdom?",
+            "correct_answer": "Tog II",
+            "incorrect_answers": [
+                "M4 Sherman",
+                "Tiger H1",
+                "T-34"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "In what year did the Great Northern War, between Russia and Sweden, end?",
+            "correct_answer": "1721",
+            "incorrect_answers": [
+                "1726",
+                "1727",
+                "1724"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Which of the following ancient Near Eastern peoples still exists as a modern ethnic group?",
+            "correct_answer": "Assyrians",
+            "incorrect_answers": [
+                "Babylonians",
+                "Hittites",
+                "Elamites"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Which WWII tank ace is credited with having destroyed the most tanks?",
+            "correct_answer": "Kurt Knispel",
+            "incorrect_answers": [
+                "Michael Wittmann",
+                "Walter Kniep",
+                "Otto Carius"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Which U.S. President was in office when the Gulf War began?",
+            "correct_answer": "George H. W. Bush",
+            "incorrect_answers": [
+                "Richard Nixon",
+                "George W. Bush ",
+                "Ronald Regan"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "When did L. L. Zamenhof first publish &quot;Unua Libro&quot;, the first publication describing his international language Esperanto?",
+            "correct_answer": "1887",
+            "incorrect_answers": [
+                "1897",
+                "1905",
+                "1915"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "In the War of the Pacific (1879 - 1883), Bolivia lost its access to the Pacific Ocean after being defeated by which South American country?",
+            "correct_answer": "Chile",
+            "incorrect_answers": [
+                "Peru",
+                "Brazil",
+                "Argentina"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Which Nazi General was known as the &quot;Desert Fox&quot;?",
+            "correct_answer": "Erwin Rommel",
+            "incorrect_answers": [
+                "Gerd von Rundstadt",
+                "Wilhelm Keitel",
+                "Heinz Guderian "
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "The idea of Socialism was articulated and advanced by whom?",
+            "correct_answer": "Karl Marx",
+            "incorrect_answers": [
+                "Vladimir Lenin",
+                "Joseph Stalin",
+                "Vladimir Putin"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "In what year was the famous 45 foot tall Hollywood sign first erected?",
+            "correct_answer": "1923",
+            "incorrect_answers": [
+                "1903",
+                "1913",
+                "1933"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "Who discovered Penicillin?",
+            "correct_answer": "Alexander Flemming",
+            "incorrect_answers": [
+                "Marie Curie",
+                "Alfred Nobel",
+                "Louis Pasteur"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "Who led the Communist Revolution of Russia?",
+            "correct_answer": "Vladimir Lenin",
+            "incorrect_answers": [
+                "Joseph Stalin",
+                "Vladimir Putin",
+                "Mikhail Gorbachev"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "America&#039;s Strategic Defense System during the Cold War was nicknamed after this famous movie.",
+            "correct_answer": "Star Wars",
+            "incorrect_answers": [
+                "Jaws",
+                "Blade Runner",
+                "Alien"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "Which one of these was not a beach landing site in the Invasion of Normandy?",
+            "correct_answer": "Silver",
+            "incorrect_answers": [
+                "Gold",
+                "Juno",
+                "Sword"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "On which day did the attempted coup d&#039;etat of 1991 in the Soviet Union begin?",
+            "correct_answer": "August 19",
+            "incorrect_answers": [
+                "August 21",
+                "December 26",
+                "December 24"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Which Roman Emperor led the Roman Empire to reach its maximum territorial extent?",
+            "correct_answer": "Trajan",
+            "incorrect_answers": [
+                "Julius Caesar",
+                "Claudius",
+                "Constantine the Great"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "In which years did the Battle of Gallipoli take place?",
+            "correct_answer": "1915 - 1916",
+            "incorrect_answers": [
+                "1914 - 1918",
+                "1914 - 1915",
+                "1915 - 1918"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Who was the first president born in the independent United States?",
+            "correct_answer": "Martin Van Buren",
+            "incorrect_answers": [
+                "John Adams",
+                "George Washington",
+                "James Monroe "
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "In which year was Constantinople conquered by the Turks?",
+            "correct_answer": "1453",
+            "incorrect_answers": [
+                "1435",
+                "1454",
+                "1440"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "What was the bloodiest single-day battle during the American Civil War?",
+            "correct_answer": "The Battle of Antietam",
+            "incorrect_answers": [
+                "The Siege of Vicksburg",
+                "The Battle of Gettysburg",
+                "The Battles of Chancellorsville"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "What was the aim of the &quot;Umbrella Revolution&quot; in Hong Kong in 2014?",
+            "correct_answer": "Genuine universal suffrage",
+            "incorrect_answers": [
+                "Gaining Independence",
+                "Go back under British Rule",
+                "Lower taxes"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "In 1961, an American B-52 aircraft crashed and nearly detonated two 4mt nuclear bombs over which US city?",
+            "correct_answer": "Goldsboro, North Carolina",
+            "incorrect_answers": [
+                "Hicksville, New York",
+                "Jacksonville, Florida",
+                "Conway, Arkansas"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "When was the city of Rome, Italy founded?",
+            "correct_answer": "753 BCE",
+            "incorrect_answers": [
+                "902 BCE",
+                "524 BCE",
+                "697 BCE"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Which U.S. president took part in the Potsdam Conference, where the Allies reached a peace settlement with Germany?",
+            "correct_answer": "Harry S. Truman",
+            "incorrect_answers": [
+                "Dwight D. Eisenhower",
+                "Franklin D. Roosevelt",
+                "Herbert Hoover"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "What year did the Boxing Day earthquake &amp; tsunami occur in the Indian Ocean?",
+            "correct_answer": "2004",
+            "incorrect_answers": [
+                "2006",
+                "2008",
+                "2002"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "On which day did construction start on &quot;The Pentagon&quot;, the headquarters for the United States Department of Defense?",
+            "correct_answer": "September 11, 1941",
+            "incorrect_answers": [
+                "June 15, 1947",
+                "January 15, 1943",
+                "September 2, 1962"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "When was &quot;The Gadget&quot;, the first nuclear device to be detonated, tested?",
+            "correct_answer": "July 16, 1945",
+            "incorrect_answers": [
+                "June 22, 1945",
+                "August 6, 1945",
+                "April 5, 1945"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Which Las Vegas casino was originally constructed and operated by mobster Bugsy Siegel?",
+            "correct_answer": "The Flamingo",
+            "incorrect_answers": [
+                "The MGM Grand",
+                "The Sands",
+                "The Sahara"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "When did the United States formally declare war on Japan, entering World War II?",
+            "correct_answer": "December 8, 1941",
+            "incorrect_answers": [
+                "June 6, 1944",
+                "June 22, 1941",
+                "September 1, 1939"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "Which of these facilities was not present on the Titanic?",
+            "correct_answer": "Fainting room",
+            "incorrect_answers": [
+                "Turkish bath",
+                "Kennel",
+                "Squash court"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "easy",
+            "category": "History",
+            "question": "These two countries held a commonwealth from the 16th to 18th century.",
+            "correct_answer": "Poland and Lithuania",
+            "incorrect_answers": [
+                "Hutu and Rwanda",
+                "North Korea and South Korea",
+                "Bangladesh and Bhutan"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "In relation to the British Occupation in Ireland, what does the IRA stand for.",
+            "correct_answer": "Irish Republican Army",
+            "incorrect_answers": [
+                "Irish Rebel Alliance",
+                "Irish Reformation Army",
+                "Irish-Royal Alliance"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "In what year did Kentucky become the 15th state to join the union?",
+            "correct_answer": "1792",
+            "incorrect_answers": [
+                "1782",
+                "1798",
+                "1788"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "The Tsar Bomba, the most powerful nuclear bomb ever tested, had a yield of 50 megatons but theoretically had a maximum yield of how much?",
+            "correct_answer": "100 Megatons",
+            "incorrect_answers": [
+                "200 Megatons",
+                "75 Megatons",
+                "150 Megatons"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "medium",
+            "category": "History",
+            "question": "What is the name of the US Navy spy ship which was attacked and captured by North Korean forces in 1968?",
+            "correct_answer": "USS Pueblo",
+            "incorrect_answers": [
+                "USS North Carolina",
+                "USS Constitution",
+                "USS Indianapolis"
+            ]
+        },
+        {
+            "type": "multiple",
+            "difficulty": "hard",
+            "category": "History",
+            "question": "Who is the creator of the soft drink, Dr. Pepper?",
+            "correct_answer": "Charles Alderton",
+            "incorrect_answers": [
+                "James Wellington",
+                "Johnson Hinsin",
+                "Boris Heviltik"
+            ]
+        }
+    ]
+}

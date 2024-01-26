@@ -3,6 +3,7 @@ import html
 import random
 import RPi.GPIO as GPIO
 import time
+import json
 
 global punten
 punten = 0
@@ -14,11 +15,10 @@ GPIO.setup(26, GPIO.OUT)
 GPIO.setup(17, GPIO.OUT)
 
 # vragen ophalen
-def vragen_ophalen(amount: int, category: int) -> list:
-    url = f"https://opentdb.com/api.php?amount={amount}&category={category}"
-    response = requests.get(url)
-    response_json = response.json()
-    return response_json["results"]
+def vragen_ophalen(json_file_path: str) -> list:
+    with open (json_file_path, 'r', encoding="utf-8") as file:
+        data = json.load(file)
+        return data["results"]
 
 def led_aan_rood():
     for i in range(5):

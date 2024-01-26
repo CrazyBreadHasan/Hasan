@@ -172,6 +172,8 @@ def speel_spel(amount: int, catogory: int, encoder_instance: RotaryEncoder, type
             fout += 1
 
         punten_led()
+        
+
     return juiste_antwoord_tekst, type_vraag
 
 
