@@ -306,9 +306,11 @@ if __name__ == '__main__':
 
 
 
+
     except KeyboardInterrupt:
         print("Keyboard interrupt. Cleaning up GPIO.")
         GPIO.cleanup()
     finally:
         GPIO.cleanup()
         display.lcd_clear()  # ok
+        os.system("sudo shutdown -h now")
