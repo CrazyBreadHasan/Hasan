@@ -25,6 +25,7 @@ GPIO.setup(13, GPIO.OUT)
 GPIO.setup(4, GPIO.IN, pull_up_down=GPIO.PUD_UP)  # okok
 GPIO.setup(5, GPIO.IN)
 GPIO.setup(12, GPIO.IN)
+GPIO.setup(22, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 display = drivers.Lcd()
 
 global punten
@@ -97,6 +98,8 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
                 return 2  # Index for keuze3
             elif counter in range(16, 20):
                 return 3  # Index for keuze4 #ok1
+        if GPIO.input(22) == GPIO.LOW:
+            os.system("sudo shutdown -h now")
 
 
 
