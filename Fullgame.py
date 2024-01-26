@@ -118,7 +118,7 @@ def pak_gebruiker_keuze_rotary(encoder_instance: RotaryEncoder, event, type_vraa
 #                 return keuze4
 
 
-def speel_spel(vragen: list, encoder_instance: RotaryEncoder, type_vraag) -> None:
+def speel_spel(vragen: list, encoder_instance: RotaryEncoder, type_vraag) -> str:
     global goed
     global fout
     global counter
